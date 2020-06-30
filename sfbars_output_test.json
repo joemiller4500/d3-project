@@ -1,0 +1,2040 @@
+{
+      "businesses": [
+            {
+                  "id": "YK-MJsGQ6mM-4ZBPsznyog",
+                  "alias": "the-beer-pong-lounge-san-francisco-2",
+                  "name": "The Beer Pong Lounge",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/eJIbSlRyF-tOzOsxPntFzg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/the-beer-pong-lounge-san-francisco-2?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 7,
+                  "categories": [
+                        {
+                              "alias": "sportsbars",
+                              "title": "Sports Bars"
+                        },
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.7981331,
+                        "longitude": -122.4056763
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "498 Broadway",
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94133",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "498 Broadway",
+                              "San Francisco, CA 94133"
+                        ]
+                  },
+                  "phone": "+14159922790",
+                  "display_phone": "(415) 992-2790",
+                  "distance": 4967.471266761257
+            },
+            {
+                  "id": "_hvJ70s4kHsKPp0P_MmR9A",
+                  "alias": "deck-the-halls-bar-san-francisco",
+                  "name": "Deck The Halls Bar",
+                  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/m-wE3qjojZPL099fWNc_IA/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/deck-the-halls-bar-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 59,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        },
+                        {
+                              "alias": "popuprestaurants",
+                              "title": "Pop-Up Restaurants"
+                        }
+                  ],
+                  "rating": 3.5,
+                  "coordinates": {
+                        "latitude": 37.7874672,
+                        "longitude": -122.4204681
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "1217 Sutter St",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94109",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "1217 Sutter St",
+                              "San Francisco, CA 94109"
+                        ]
+                  },
+                  "phone": "+16505429193",
+                  "display_phone": "(650) 542-9193",
+                  "distance": 3271.0439024496586
+            },
+            {
+                  "id": "qNU6F32ynMyoijvYvrABxA",
+                  "alias": "cancholas-bar-san-francisco",
+                  "name": "Cancholas Bar",
+                  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/HGdXMpzK3nfruvRVyapPkw/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/cancholas-bar-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 6,
+                  "categories": [
+                        {
+                              "alias": "divebars",
+                              "title": "Dive Bars"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.73628,
+                        "longitude": -122.42405
+                  },
+                  "transactions": [],
+                  "price": "$",
+                  "location": {
+                        "address1": "3775 Mission St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94110",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "3775 Mission St",
+                              "San Francisco, CA 94110"
+                        ]
+                  },
+                  "phone": "+14156482909",
+                  "display_phone": "(415) 648-2909",
+                  "distance": 2942.4705842059993
+            },
+            {
+                  "id": "BBHde0RysZbwzou1wpHsvA",
+                  "alias": "tabletop-tap-house-san-francisco",
+                  "name": "Tabletop Tap House",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/5Te9GtreVLrddahKnXFOMg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/tabletop-tap-house-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 139,
+                  "categories": [
+                        {
+                              "alias": "tradamerican",
+                              "title": "American (Traditional)"
+                        },
+                        {
+                              "alias": "sportsbars",
+                              "title": "Sports Bars"
+                        },
+                        {
+                              "alias": "cocktailbars",
+                              "title": "Cocktail Bars"
+                        }
+                  ],
+                  "rating": 3.0,
+                  "coordinates": {
+                        "latitude": 37.783583090384,
+                        "longitude": -122.403018850515
+                  },
+                  "transactions": [
+                        "delivery",
+                        "pickup"
+                  ],
+                  "price": "$$",
+                  "location": {
+                        "address1": "175 4th St",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94103",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "175 4th St",
+                              "San Francisco, CA 94103"
+                        ]
+                  },
+                  "phone": "+14153696100",
+                  "display_phone": "(415) 369-6100",
+                  "distance": 3891.7212887125165
+            },
+            {
+                  "id": "II8gHgNvF6E5Xn-CKQKgBQ",
+                  "alias": "travis-marina-bar-sausalito",
+                  "name": "Travis Marina Bar",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/cCgmExDlxGjMB1YcZqhr0w/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/travis-marina-bar-sausalito?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 24,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.8339520008255,
+                        "longitude": -122.474278575162
+                  },
+                  "transactions": [],
+                  "price": "$",
+                  "location": {
+                        "address1": "679 Sommerville Rd",
+                        "address2": "Fl 2",
+                        "address3": "Presidio Yacht Club",
+                        "city": "Sausalito",
+                        "zip_code": "94965",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "679 Sommerville Rd",
+                              "Fl 2",
+                              "Presidio Yacht Club",
+                              "Sausalito, CA 94965"
+                        ]
+                  },
+                  "phone": "+14153322319",
+                  "display_phone": "(415) 332-2319",
+                  "distance": 8776.869437963333
+            },
+            {
+                  "id": "9CzemsDENvgeo3erkmUnOg",
+                  "alias": "roh-bar-and-restaurant-san-francisco",
+                  "name": "ROH Bar & Restaurant",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/n61NtiShQspYYEaUMewUUA/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/roh-bar-and-restaurant-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 24,
+                  "categories": [
+                        {
+                              "alias": "sportsbars",
+                              "title": "Sports Bars"
+                        },
+                        {
+                              "alias": "newamerican",
+                              "title": "American (New)"
+                        },
+                        {
+                              "alias": "breakfast_brunch",
+                              "title": "Breakfast & Brunch"
+                        }
+                  ],
+                  "rating": 2.5,
+                  "coordinates": {
+                        "latitude": 37.78984,
+                        "longitude": -122.42165
+                  },
+                  "transactions": [
+                        "delivery"
+                  ],
+                  "price": "$$",
+                  "location": {
+                        "address1": "1500 Van Ness Ave",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94109",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "1500 Van Ness Ave",
+                              "San Francisco, CA 94109"
+                        ]
+                  },
+                  "phone": "+14154414000",
+                  "display_phone": "(415) 441-4000",
+                  "distance": 3465.7072383244176
+            },
+            {
+                  "id": "P-DDYix3d6yUXi-D8MQtUw",
+                  "alias": "nightingale-bar-san-francisco",
+                  "name": "Nightingale Bar",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/thsJPx6SuFaEEbOnKbvDQA/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/nightingale-bar-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 29,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.79031,
+                        "longitude": -122.40418
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "239 Kearny St",
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94108",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "239 Kearny St",
+                              "San Francisco, CA 94108"
+                        ]
+                  },
+                  "phone": "+14156496952",
+                  "display_phone": "(415) 649-6952",
+                  "distance": 4330.5678893641925
+            },
+            {
+                  "id": "s5ciZdL0srRWCNXKyehbTg",
+                  "alias": "under-the-buck-san-francisco-2",
+                  "name": "Under The Buck",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ITGntQyCZyAObn8vhQu0GA/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/under-the-buck-san-francisco-2?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 4,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        },
+                        {
+                              "alias": "newamerican",
+                              "title": "American (New)"
+                        },
+                        {
+                              "alias": "bbq",
+                              "title": "Barbeque"
+                        }
+                  ],
+                  "rating": 4.5,
+                  "coordinates": {
+                        "latitude": 37.788852,
+                        "longitude": -122.4016393
+                  },
+                  "transactions": [
+                        "delivery"
+                  ],
+                  "price": "$$",
+                  "location": {
+                        "address1": "619 Market St",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94105",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "619 Market St",
+                              "San Francisco, CA 94105"
+                        ]
+                  },
+                  "phone": "+14153711351",
+                  "display_phone": "(415) 371-1351",
+                  "distance": 4368.442779929749
+            },
+            {
+                  "id": "H5kL0f46pJLLitMH956BvQ",
+                  "alias": "lounge-847-san-francisco",
+                  "name": "Lounge 847",
+                  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/BGrluFkOs9vLdMPn2Q1Pgw/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/lounge-847-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 3,
+                  "categories": [
+                        {
+                              "alias": "cannabis_clinics",
+                              "title": "Cannabis Clinics"
+                        },
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 4.5,
+                  "coordinates": {
+                        "latitude": 37.7821862554497,
+                        "longitude": -122.40386467427
+                  },
+                  "transactions": [],
+                  "price": "$",
+                  "location": {
+                        "address1": "847 Howard St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94103",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "847 Howard St",
+                              "San Francisco, CA 94103"
+                        ]
+                  },
+                  "phone": "+14156180847",
+                  "display_phone": "(415) 618-0847",
+                  "distance": 3715.3987104313396
+            },
+            {
+                  "id": "NlaovFwca226pSlwg6fvyg",
+                  "alias": "club-malibu-san-francisco",
+                  "name": "Club Malibu",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/k-zzT6MaBAR0zVUOoFKnCw/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/club-malibu-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 12,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 3.0,
+                  "coordinates": {
+                        "latitude": 37.7422830462456,
+                        "longitude": -122.421969920397
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "3395 Mission St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94110",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "3395 Mission St",
+                              "San Francisco, CA 94110"
+                        ]
+                  },
+                  "phone": "+14159542762",
+                  "display_phone": "(415) 954-2762",
+                  "distance": 2438.512964056473
+            },
+            {
+                  "id": "JoK44hl6Zcbq9OgGK_-d0w",
+                  "alias": "streat-brew-san-francisco",
+                  "name": "StrEat Brew",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/rzx0xa54EQO9JtL2oVJy2w/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/streat-brew-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 7,
+                  "categories": [
+                        {
+                              "alias": "streetvendors",
+                              "title": "Street Vendors"
+                        },
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        },
+                        {
+                              "alias": "foodtrucks",
+                              "title": "Food Trucks"
+                        }
+                  ],
+                  "rating": 3.5,
+                  "coordinates": {
+                        "latitude": 37.769775,
+                        "longitude": -122.411919
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "428 11th St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94103",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "428 11th St",
+                              "San Francisco, CA 94103"
+                        ]
+                  },
+                  "phone": "+19258990933",
+                  "display_phone": "(925) 899-0933",
+                  "distance": 2373.0745832877806
+            },
+            {
+                  "id": "L8c4IbRg9_zZSY0T7HUP8w",
+                  "alias": "golden-gate-grill-san-francisco",
+                  "name": "Golden Gate Grill",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/4oKUXpvadr8iG-tWTCV0WQ/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/golden-gate-grill-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 103,
+                  "categories": [
+                        {
+                              "alias": "newamerican",
+                              "title": "American (New)"
+                        },
+                        {
+                              "alias": "tradamerican",
+                              "title": "American (Traditional)"
+                        },
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 3.0,
+                  "coordinates": {
+                        "latitude": 37.788990020752,
+                        "longitude": -122.408843994141
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "449 Powell St",
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94102",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "449 Powell St",
+                              "San Francisco, CA 94102"
+                        ]
+                  },
+                  "phone": "+14159818646",
+                  "display_phone": "(415) 981-8646",
+                  "distance": 3951.8698385965095
+            },
+            {
+                  "id": "RvCF9fmvPXX9zOtryp2i1A",
+                  "alias": "the-room-ultra-lounge-san-francisco-2",
+                  "name": "The Room Ultra Lounge",
+                  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/s6oO6YWV647w9KJgGgGg7Q/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/the-room-ultra-lounge-san-francisco-2?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 21,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 2.5,
+                  "coordinates": {
+                        "latitude": 37.7809638977051,
+                        "longitude": -122.408309936523
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "101 6th St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94154",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "101 6th St",
+                              "San Francisco, CA 94154"
+                        ]
+                  },
+                  "phone": "+14155437666",
+                  "display_phone": "(415) 543-7666",
+                  "distance": 3324.8473839501307
+            },
+            {
+                  "id": "WmexMoUb8_BMoEz5rTGHvA",
+                  "alias": "knowhere-a-speakeasy-san-francisco",
+                  "name": "KnoWhere a speakeasy",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/EqBKD04yArWbQIA2Gl6gCg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/knowhere-a-speakeasy-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 2,
+                  "categories": [
+                        {
+                              "alias": "speakeasies",
+                              "title": "Speakeasies"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.798017,
+                        "longitude": -122.407864
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "644 Broadway St",
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94133",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "644 Broadway St",
+                              "San Francisco, CA 94133"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4827.738704337709
+            },
+            {
+                  "id": "l5wjX20JdQV3_8KHKaQLLA",
+                  "alias": "reeves-san-francisco-2",
+                  "name": "Reeves",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Ye9RScGSLdNiyongTuVSCw/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/reeves-san-francisco-2?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 2,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.77821,
+                        "longitude": -122.39703
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "510 Brannan St",
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94107",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "510 Brannan St",
+                              "San Francisco, CA 94107"
+                        ]
+                  },
+                  "phone": "+14152739517",
+                  "display_phone": "(415) 273-9517",
+                  "distance": 3961.0204045612945
+            },
+            {
+                  "id": "YDpweLoDZd1Nwlyw_AypOg",
+                  "alias": "the-vault-garden-san-francisco",
+                  "name": "The Vault Garden",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/_PWJSTE8NEbGuwu7lGXDyA/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/the-vault-garden-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 4,
+                  "categories": [
+                        {
+                              "alias": "wine_bars",
+                              "title": "Wine Bars"
+                        },
+                        {
+                              "alias": "tradamerican",
+                              "title": "American (Traditional)"
+                        },
+                        {
+                              "alias": "cocktailbars",
+                              "title": "Cocktail Bars"
+                        }
+                  ],
+                  "rating": 4.5,
+                  "coordinates": {
+                        "latitude": 37.792108,
+                        "longitude": -122.403763
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "555 California St",
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94104",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "555 California St",
+                              "San Francisco, CA 94104"
+                        ]
+                  },
+                  "phone": "+14155084675",
+                  "display_phone": "(415) 508-4675",
+                  "distance": 4508.273054484868
+            },
+            {
+                  "id": "TmelSWto9a_EkxsAn7UO0Q",
+                  "alias": "the-family-san-francisco",
+                  "name": "The Family",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/QEDNBs5ieuKxr9x069Aung/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/the-family-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 3,
+                  "categories": [
+                        {
+                              "alias": "pubs",
+                              "title": "Pubs"
+                        }
+                  ],
+                  "rating": 4.5,
+                  "coordinates": {
+                        "latitude": 37.7898864746094,
+                        "longitude": -122.40894317627
+                  },
+                  "transactions": [],
+                  "price": "$$$",
+                  "location": {
+                        "address1": "545 Powell St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94108",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "545 Powell St",
+                              "San Francisco, CA 94108"
+                        ]
+                  },
+                  "phone": "+14157810800",
+                  "display_phone": "(415) 781-0800",
+                  "distance": 4028.176905571083
+            },
+            {
+                  "id": "_HabTJxnV1kE7mW8Z_vCNA",
+                  "alias": "the-jazz-room-san-francisco",
+                  "name": "The Jazz Room",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/vjegPj6s6Bwif6sOZamxFg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/the-jazz-room-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 2,
+                  "categories": [
+                        {
+                              "alias": "danceclubs",
+                              "title": "Dance Clubs"
+                        },
+                        {
+                              "alias": "wine_bars",
+                              "title": "Wine Bars"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.72963,
+                        "longitude": -122.39223
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "5267 3rd St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94124",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "5267 3rd St",
+                              "San Francisco, CA 94124"
+                        ]
+                  },
+                  "phone": "+14158225719",
+                  "display_phone": "(415) 822-5719",
+                  "distance": 5213.558771278588
+            },
+            {
+                  "id": "xT6n7wZ9JtnJyYY4h7Fr0g",
+                  "alias": "cocos-bar-san-francisco",
+                  "name": "Coco's Bar",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/LVzf-4Ijp6NU1um8kn0qyw/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/cocos-bar-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 6,
+                  "categories": [
+                        {
+                              "alias": "divebars",
+                              "title": "Dive Bars"
+                        }
+                  ],
+                  "rating": 3.5,
+                  "coordinates": {
+                        "latitude": 37.72546,
+                        "longitude": -122.43387
+                  },
+                  "transactions": [],
+                  "price": "$",
+                  "location": {
+                        "address1": "4541 Mission St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94112",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "4541 Mission St",
+                              "San Francisco, CA 94112"
+                        ]
+                  },
+                  "phone": "+14153346863",
+                  "display_phone": "(415) 334-6863",
+                  "distance": 3944.172074123802
+            },
+            {
+                  "id": "Fmud00E7unIxAw_ZQGL4nQ",
+                  "alias": "virgin-america-flight-deck-san-francisco",
+                  "name": "Virgin America Flight Deck",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/27cecTGWI2Du9_R06WHAIQ/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/virgin-america-flight-deck-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 5,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 3.5,
+                  "coordinates": {
+                        "latitude": 37.7794914245605,
+                        "longitude": -122.38948059082
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "24 Willie Mays Plz",
+                        "address2": "",
+                        "address3": "Att Park",
+                        "city": "San Francisco",
+                        "zip_code": "94107",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "24 Willie Mays Plz",
+                              "Att Park",
+                              "San Francisco, CA 94107"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4616.915717286298
+            },
+            {
+                  "id": "NQtV0KLnhii2nG5mCzyc-g",
+                  "alias": "blowfish-sushi-to-die-for-san-francisco-2",
+                  "name": "Blowfish Sushi to Die For",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/Rrqj-V93NIHow4dQhTz4gQ/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/blowfish-sushi-to-die-for-san-francisco-2?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 18,
+                  "categories": [
+                        {
+                              "alias": "japanese",
+                              "title": "Japanese"
+                        },
+                        {
+                              "alias": "sushi",
+                              "title": "Sushi Bars"
+                        },
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.76196,
+                        "longitude": -122.419169
+                  },
+                  "transactions": [
+                        "restaurant_reservation"
+                  ],
+                  "price": "$$$",
+                  "location": {
+                        "address1": "2193 Mission St",
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94110",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "2193 Mission St",
+                              "San Francisco, CA 94110"
+                        ]
+                  },
+                  "phone": "+14152853848",
+                  "display_phone": "(415) 285-3848",
+                  "distance": 1521.8981771276183
+            },
+            {
+                  "id": "hdnNzDpEVxBYUYlrPr0CzA",
+                  "alias": "upstairs-bar-and-lounge-san-francisco-2",
+                  "name": "Upstairs Bar & Lounge",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/1zzS0ciuC6jYm5dFpNPD-g/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/upstairs-bar-and-lounge-san-francisco-2?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 8,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 3.0,
+                  "coordinates": {
+                        "latitude": 37.7853691,
+                        "longitude": -122.4006895
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "181 3rd St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94105",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "181 3rd St",
+                              "San Francisco, CA 94105"
+                        ]
+                  },
+                  "phone": "+14158177836",
+                  "display_phone": "(415) 817-7836",
+                  "distance": 4179.310485345186
+            },
+            {
+                  "id": "6tALVlo-qiz5fb6rNv4VAg",
+                  "alias": "cc2-san-francisco",
+                  "name": "cc2",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/7rlxnrXv9XcnhEXRtH5Www/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/cc2-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 2,
+                  "categories": [
+                        {
+                              "alias": "wine_bars",
+                              "title": "Wine Bars"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.7759800699005,
+                        "longitude": -122.414675988257
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "1301 Mission St",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94103",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "1301 Mission St",
+                              "San Francisco, CA 94103"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 2544.4149979068666
+            },
+            {
+                  "id": "V9VrsBvEll8jhXWMDJFttw",
+                  "alias": "the-marina-district-union-and-fillmore-street-bars-san-francisco",
+                  "name": "The Marina District: Union and Fillmore Street Bars",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/8ahu95SWLE1pqKZSjMfpyA/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/the-marina-district-union-and-fillmore-street-bars-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 7,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 3.0,
+                  "coordinates": {
+                        "latitude": 37.8007583618164,
+                        "longitude": -122.436363220215
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": null,
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94123",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "San Francisco, CA 94123"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4577.362184304185
+            },
+            {
+                  "id": "ttwij7RwPa42BNPNNbk7bQ",
+                  "alias": "hilton-union-square-lobby-bar-san-francisco",
+                  "name": "Hilton Union Square Lobby Bar",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/tre0rxvVSkdeMsccaDZasg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/hilton-union-square-lobby-bar-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 4,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.78564,
+                        "longitude": -122.41041
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "333 O'Farrell St",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94102",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "333 O'Farrell St",
+                              "San Francisco, CA 94102"
+                        ]
+                  },
+                  "phone": "+18556050316",
+                  "display_phone": "(855) 605-0316",
+                  "distance": 3583.725608150709
+            },
+            {
+                  "id": "uBLYT1Mo7zdppt5VZB1VrQ",
+                  "alias": "rudys-place-san-francisco",
+                  "name": "Rudy's Place",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/Mgzuq4XG1R6Z7HXj6kmACw/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/rudys-place-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 3,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 4.5,
+                  "coordinates": {
+                        "latitude": 37.786563,
+                        "longitude": -122.416183
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "784 Geary St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94109",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "784 Geary St",
+                              "San Francisco, CA 94109"
+                        ]
+                  },
+                  "phone": "+14153599509",
+                  "display_phone": "(415) 359-9509",
+                  "distance": 3363.291444164672
+            },
+            {
+                  "id": "I7mzdkYaUMiFSQ-1ixwa_g",
+                  "alias": "obscenity-bar-and-lounge-san-francisco",
+                  "name": "Obscenity Bar & Lounge",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/AMROTcRE6flUj9XwH0PgbQ/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/obscenity-bar-and-lounge-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 13,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.78921,
+                        "longitude": -122.40975
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "562 Sutter St",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94102",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "562 Sutter St",
+                              "San Francisco, CA 94102"
+                        ]
+                  },
+                  "phone": "+14154334434",
+                  "display_phone": "(415) 433-4434",
+                  "distance": 3933.690674038166
+            },
+            {
+                  "id": "dvEE10ub-JQ4EL0bmMTwhw",
+                  "alias": "lucitas-place-bar-san-francisco",
+                  "name": "Lucita's Place Bar",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/TdqyejSxwuYEhoBnbNI9fg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/lucitas-place-bar-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 3,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.715987,
+                        "longitude": -122.441079
+                  },
+                  "transactions": [],
+                  "price": "$",
+                  "location": {
+                        "address1": "5163 Mission St",
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94112",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "5163 Mission St",
+                              "San Francisco, CA 94112"
+                        ]
+                  },
+                  "phone": "+14155872453",
+                  "display_phone": "(415) 587-2453",
+                  "distance": 5010.605918500537
+            },
+            {
+                  "id": "XnBfD_J0wEDfBr4SyNjgpQ",
+                  "alias": "grand-club-san-francisco-4",
+                  "name": "Grand Club",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/cTqjnW5Al2ScAkC_kv9G1A/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/grand-club-san-francisco-4?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 3,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        },
+                        {
+                              "alias": "internetcafe",
+                              "title": "Internet Cafes"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.78891,
+                        "longitude": -122.4072
+                  },
+                  "transactions": [],
+                  "price": "$$$",
+                  "location": {
+                        "address1": "345 Stockton St",
+                        "address2": "Fl 32",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94108",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "345 Stockton St",
+                              "Fl 32",
+                              "San Francisco, CA 94108"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4057.368049432036
+            },
+            {
+                  "id": "vkx4tU2humMxZjWlJEYLNw",
+                  "alias": "ivy-bar-san-francisco",
+                  "name": "Ivy Bar",
+                  "image_url": "",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/ivy-bar-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 10,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 2.5,
+                  "coordinates": {
+                        "latitude": 37.7809181213379,
+                        "longitude": -122.459701538086
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "3745 Geary Blvd",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94118",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "3745 Geary Blvd",
+                              "San Francisco, CA 94118"
+                        ]
+                  },
+                  "phone": "+14156682323",
+                  "display_phone": "(415) 668-2323",
+                  "distance": 3024.703268550785
+            },
+            {
+                  "id": "ncX_mN9Eg_dFfVoPjMSEQA",
+                  "alias": "mason-social-club-san-francisco",
+                  "name": "Mason Social Club",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/NisG-mkdvEHRxnxO5iySRw/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/mason-social-club-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 3,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        },
+                        {
+                              "alias": "sportsbars",
+                              "title": "Sports Bars"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.78676,
+                        "longitude": -122.40941
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "334 Mason St",
+                        "address2": "",
+                        "address3": "King George Hotel",
+                        "city": "San Francisco",
+                        "zip_code": "94102",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "334 Mason St",
+                              "King George Hotel",
+                              "San Francisco, CA 94102"
+                        ]
+                  },
+                  "phone": "+14157815050",
+                  "display_phone": "(415) 781-5050",
+                  "distance": 3738.467879498804
+            },
+            {
+                  "id": "5FEdwp5a285TrIW2hmKtWA",
+                  "alias": "nob-hill-club-san-francisco-2",
+                  "name": "Nob Hill Club",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/cyxqlAjVHPNrhSN9hRIsnQ/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/nob-hill-club-san-francisco-2?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 24,
+                  "categories": [
+                        {
+                              "alias": "newamerican",
+                              "title": "American (New)"
+                        },
+                        {
+                              "alias": "wine_bars",
+                              "title": "Wine Bars"
+                        },
+                        {
+                              "alias": "breakfast_brunch",
+                              "title": "Breakfast & Brunch"
+                        }
+                  ],
+                  "rating": 3.5,
+                  "coordinates": {
+                        "latitude": 37.791493,
+                        "longitude": -122.410218
+                  },
+                  "transactions": [],
+                  "price": "$$$",
+                  "location": {
+                        "address1": "999 California St",
+                        "address2": "Lobby Level",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94108",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "999 California St",
+                              "Lobby Level",
+                              "San Francisco, CA 94108"
+                        ]
+                  },
+                  "phone": "+14153923434",
+                  "display_phone": "(415) 392-3434",
+                  "distance": 4109.359012274082
+            },
+            {
+                  "id": "ymmJ88tLdHNdOAAS9Hz_Ag",
+                  "alias": "taproot-san-francisco",
+                  "name": "Taproot",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/rZihu7hiwcOXH5bj3sVfnA/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/taproot-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 28,
+                  "categories": [
+                        {
+                              "alias": "wine_bars",
+                              "title": "Wine Bars"
+                        },
+                        {
+                              "alias": "coffee",
+                              "title": "Coffee & Tea"
+                        },
+                        {
+                              "alias": "sandwiches",
+                              "title": "Sandwiches"
+                        }
+                  ],
+                  "rating": 3.5,
+                  "coordinates": {
+                        "latitude": 37.7667841088128,
+                        "longitude": -122.388016622039
+                  },
+                  "transactions": [
+                        "delivery"
+                  ],
+                  "price": "$$",
+                  "location": {
+                        "address1": "409 Illinois St",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94158",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "409 Illinois St",
+                              "San Francisco, CA 94158"
+                        ]
+                  },
+                  "phone": "+14159151005",
+                  "display_phone": "(415) 915-1005",
+                  "distance": 4307.2366594713485
+            },
+            {
+                  "id": "4ZC8odYsJ9g09WGJHRj59Q",
+                  "alias": "beer-olympics-san-francisco",
+                  "name": "Beer Olympics",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/oknnqlh9Wd4XSFDtiqYoBg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/beer-olympics-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 3,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 3.5,
+                  "coordinates": {
+                        "latitude": 37.797652,
+                        "longitude": -122.405482
+                  },
+                  "transactions": [],
+                  "price": "$",
+                  "location": {
+                        "address1": "501 Broadway St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94133",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "501 Broadway St",
+                              "San Francisco, CA 94133"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4909.898634844431
+            },
+            {
+                  "id": "edyaVhjFPaQmpYpfsYZIGw",
+                  "alias": "siberia-san-francisco",
+                  "name": "Siberia",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/tBa-IAES2PkcMt2IvPspzg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/siberia-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 5,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 3.0,
+                  "coordinates": {
+                        "latitude": 37.77145,
+                        "longitude": -122.4139
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "314 11th St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94103",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "314 11th St",
+                              "San Francisco, CA 94103"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 2302.687903116633
+            },
+            {
+                  "id": "ManliNnHGvLSBqB8tHb8xQ",
+                  "alias": "hilton-financial-executive-lounge-san-francisco",
+                  "name": "Hilton Financial Executive Lounge",
+                  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/H7z8w1XyPbGoWeenSy4F4Q/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/hilton-financial-executive-lounge-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 2,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 4.0,
+                  "coordinates": {
+                        "latitude": 37.795143,
+                        "longitude": -122.404312
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "750 Kearny St",
+                        "address2": "Fl 26",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94108",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "750 Kearny St",
+                              "Fl 26",
+                              "San Francisco, CA 94108"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4742.120630265596
+            },
+            {
+                  "id": "VDF133D6FPEW-avR5zhRzw",
+                  "alias": "safe-words-san-francisco",
+                  "name": "Safe Words",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/Ja8vNaiTnmbIqujZXH-Eag/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/safe-words-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        },
+                        {
+                              "alias": "comedyclubs",
+                              "title": "Comedy Clubs"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.7699798202138,
+                        "longitude": -122.413409985602
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "398 12th St",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94103",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "398 12th St",
+                              "San Francisco, CA 94103"
+                        ]
+                  },
+                  "phone": "+14156628480",
+                  "display_phone": "(415) 662-8480",
+                  "distance": 2262.782112050647
+            },
+            {
+                  "id": "XQCqmzwNcd6Ie_t-xi7f9A",
+                  "alias": "the-annex-daly-city-2",
+                  "name": "The Annex",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/FEX2ZOQConshPx019eP_qA/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/the-annex-daly-city-2?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 15,
+                  "categories": [
+                        {
+                              "alias": "divebars",
+                              "title": "Dive Bars"
+                        }
+                  ],
+                  "rating": 3.0,
+                  "coordinates": {
+                        "latitude": 37.7059999,
+                        "longitude": -122.4617011
+                  },
+                  "transactions": [],
+                  "price": "$",
+                  "location": {
+                        "address1": "6282 Mission St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "Daly City",
+                        "zip_code": "94014",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "6282 Mission St",
+                              "Daly City, CA 94014"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 6488.135709466062
+            },
+            {
+                  "id": "v0fSpcNTwTpogSRn4ViWxg",
+                  "alias": "garnachas-san-francisco",
+                  "name": "Garnachas",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/KxmoESdM99UB8FHIUAuWAA/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/garnachas-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "tacos",
+                              "title": "Tacos"
+                        },
+                        {
+                              "alias": "beerbar",
+                              "title": "Beer Bar"
+                        },
+                        {
+                              "alias": "popuprestaurants",
+                              "title": "Pop-Up Restaurants"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.7698416573544,
+                        "longitude": -122.420240286287
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "280 14th St",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94103",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "280 14th St",
+                              "San Francisco, CA 94103"
+                        ]
+                  },
+                  "phone": "+14152440141",
+                  "display_phone": "(415) 244-0141",
+                  "distance": 1737.3088312651446
+            },
+            {
+                  "id": "FYWqmg3wKK5XTxsSaHRZkw",
+                  "alias": "great-house-of-brews-san-francisco",
+                  "name": "Great House of Brews",
+                  "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/LHlUNIIRYzd8dCwKkw5Dwg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/great-house-of-brews-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 3,
+                  "categories": [
+                        {
+                              "alias": "stadiumsarenas",
+                              "title": "Stadiums & Arenas"
+                        },
+                        {
+                              "alias": "beerbar",
+                              "title": "Beer Bar"
+                        }
+                  ],
+                  "rating": 3.5,
+                  "coordinates": {
+                        "latitude": 37.7781346292838,
+                        "longitude": -122.390285912133
+                  },
+                  "transactions": [],
+                  "price": "$$$",
+                  "location": {
+                        "address1": "24 Willie Mays Plz",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94107",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "24 Willie Mays Plz",
+                              "San Francisco, CA 94107"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4487.2890659231825
+            },
+            {
+                  "id": "Qf45oeQ4TYkAiw52czhy6w",
+                  "alias": "modelo-cantina-san-francisco",
+                  "name": "Modelo Cantina",
+                  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/-FQ6QIwtKWrhbAUwvyXdYw/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/modelo-cantina-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "sportsbars",
+                              "title": "Sports Bars"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.768319,
+                        "longitude": -122.387574
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "1 Warriors Way",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94158",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "1 Warriors Way",
+                              "San Francisco, CA 94158"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4374.607398986428
+            },
+            {
+                  "id": "fvfsUKRNKxwQDtc1NBegFQ",
+                  "alias": "carm-s-san-francisco",
+                  "name": "Carm\u2019s",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/vq0uMT2E8vbETEZP8yP25A/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/carm-s-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.785873,
+                        "longitude": -122.393749
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "45 Lansing St",
+                        "address2": "Ste 1813",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94105",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "45 Lansing St",
+                              "Ste 1813",
+                              "San Francisco, CA 94105"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4667.3489945396595
+            },
+            {
+                  "id": "J2dq49rlHgu8eXVTRRnGEw",
+                  "alias": "some-kinda-trouble-open-mic-at-amnesia-san-francisco",
+                  "name": "Some Kinda Trouble Open Mic at Amnesia",
+                  "image_url": "",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/some-kinda-trouble-open-mic-at-amnesia-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        },
+                        {
+                              "alias": "comedyclubs",
+                              "title": "Comedy Clubs"
+                        },
+                        {
+                              "alias": "musicvenues",
+                              "title": "Music Venues"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.7592269,
+                        "longitude": -122.4211567
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "853 Valencia St",
+                        "address2": "",
+                        "address3": "between 20th St & Cunningham Pl",
+                        "city": "San Francisco",
+                        "zip_code": "94110",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "853 Valencia St",
+                              "between 20th St & Cunningham Pl",
+                              "San Francisco, CA 94110"
+                        ]
+                  },
+                  "phone": "+14159700012",
+                  "display_phone": "(415) 970-0012",
+                  "distance": 1364.059389538988
+            },
+            {
+                  "id": "t1Sboj2671VgaGrREJ5yxw",
+                  "alias": "gc-lounge-san-francisco",
+                  "name": "GC Lounge",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/KHGpNiVaePwl_tNJmCP-Vg/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/gc-lounge-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.788122,
+                        "longitude": -122.401799
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "2 New Montgomery St",
+                        "address2": "",
+                        "address3": "Palace Hotel",
+                        "city": "San Francisco",
+                        "zip_code": "94105",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "2 New Montgomery St",
+                              "Palace Hotel",
+                              "San Francisco, CA 94105"
+                        ]
+                  },
+                  "phone": "+14155465089",
+                  "display_phone": "(415) 546-5089",
+                  "distance": 4293.775422761262
+            },
+            {
+                  "id": "HRzC8oaxbXQvEgM5NavFTA",
+                  "alias": "space-is-the-place-san-francisco",
+                  "name": "Space is the Place",
+                  "image_url": "",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/space-is-the-place-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "lounges",
+                              "title": "Lounges"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.7650979161263,
+                        "longitude": -122.418075352907
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "2925 16th St",
+                        "address2": "",
+                        "address3": "Every Wednesday at Pink",
+                        "city": "San Francisco",
+                        "zip_code": "94103",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "2925 16th St",
+                              "Every Wednesday at Pink",
+                              "San Francisco, CA 94103"
+                        ]
+                  },
+                  "phone": "+14154318889",
+                  "display_phone": "(415) 431-8889",
+                  "distance": 1675.2274708523587
+            },
+            {
+                  "id": "n-EK1TJZhfQYJ1gc-72iJw",
+                  "alias": "beachers-san-francisco-6",
+                  "name": "Beachers",
+                  "image_url": "",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/beachers-san-francisco-6?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": null,
+                        "longitude": null
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "San Francisco, CA"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 2162.186714403771
+            },
+            {
+                  "id": "obbj78gbuT-mSwe5i5G8ng",
+                  "alias": "san-francisco-new-years-eve-san-francisco",
+                  "name": "San Francisco New Years Eve",
+                  "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/aIAF5VOI4CGBm5cRUBECkw/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/san-francisco-new-years-eve-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "pubs",
+                              "title": "Pubs"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.7977599,
+                        "longitude": -122.43191
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "1980 Union St",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94123",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "1980 Union St",
+                              "San Francisco, CA 94123"
+                        ]
+                  },
+                  "phone": "+14155155222",
+                  "display_phone": "(415) 515-5222",
+                  "distance": 4113.714265700706
+            },
+            {
+                  "id": "yQ7xPB632J5a9NYtDKDl7g",
+                  "alias": "jp-morgan-club-san-francisco",
+                  "name": "JP Morgan Club",
+                  "image_url": "",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/jp-morgan-club-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "cocktailbars",
+                              "title": "Cocktail Bars"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.76792,
+                        "longitude": -122.38739
+                  },
+                  "transactions": [],
+                  "location": {
+                        "address1": "1 Warriors Way",
+                        "address2": "",
+                        "address3": null,
+                        "city": "San Francisco",
+                        "zip_code": "94158",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "1 Warriors Way",
+                              "San Francisco, CA 94158"
+                        ]
+                  },
+                  "phone": "",
+                  "display_phone": "",
+                  "distance": 4374.5509398089625
+            },
+            {
+                  "id": "GvLEvVvNAN7v1ePyoFFKnA",
+                  "alias": "bar-217-san-francisco",
+                  "name": "Bar 217",
+                  "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/yeBwkFu3rS6bUkPrfnjWnQ/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/bar-217-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 1,
+                  "categories": [
+                        {
+                              "alias": "cocktailbars",
+                              "title": "Cocktail Bars"
+                        }
+                  ],
+                  "rating": 5.0,
+                  "coordinates": {
+                        "latitude": 37.7971954345703,
+                        "longitude": -122.406120300293
+                  },
+                  "transactions": [],
+                  "price": "$$",
+                  "location": {
+                        "address1": "217 Columbus St",
+                        "address2": null,
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94133",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "217 Columbus St",
+                              "San Francisco, CA 94133"
+                        ]
+                  },
+                  "phone": "+14157887527",
+                  "display_phone": "(415) 788-7527",
+                  "distance": 4831.999890835848
+            },
+            {
+                  "id": "aUeBNa2W1GXjAeXmSM4nHw",
+                  "alias": "bristol-bar-and-grill-san-francisco",
+                  "name": "Bristol Bar & Grill",
+                  "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/yKVbijw-3cb2sL5LEzjSnQ/o.jpg",
+                  "is_closed": false,
+                  "url": "https://www.yelp.com/biz/bristol-bar-and-grill-san-francisco?adjust_creative=osFXYKFm9hPwI9dTnZ5IRw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=osFXYKFm9hPwI9dTnZ5IRw",
+                  "review_count": 12,
+                  "categories": [
+                        {
+                              "alias": "bars",
+                              "title": "Bars"
+                        },
+                        {
+                              "alias": "newamerican",
+                              "title": "American (New)"
+                        }
+                  ],
+                  "rating": 2.0,
+                  "coordinates": {
+                        "latitude": 37.8064346313477,
+                        "longitude": -122.418067932129
+                  },
+                  "transactions": [],
+                  "price": "$",
+                  "location": {
+                        "address1": "1300 Columbus Ave",
+                        "address2": "",
+                        "address3": "",
+                        "city": "San Francisco",
+                        "zip_code": "94133",
+                        "country": "US",
+                        "state": "CA",
+                        "display_address": [
+                              "1300 Columbus Ave",
+                              "San Francisco, CA 94133"
+                        ]
+                  },
+                  "phone": "+14157719000",
+                  "display_phone": "(415) 771-9000",
+                  "distance": 5332.279197320235
+            }
+      ],
+      "total": 1000,
+      "region": {
+            "center": {
+                  "longitude": -122.43644714355469,
+                  "latitude": 37.76089938976322
+            }
+      }
+}
