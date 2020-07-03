@@ -1,3 +1,17 @@
+function setGaugeTrace(rating){
+  var trace = [{
+    domain: { x: [0, 1], y: [0, 1] },
+    value: rating,
+    title: {text: "Bar Rating"},
+    type: "indicator",
+		mode: "gauge+number",
+    gauge: {
+      axis: { range: [0, 5]}
+    }
+  }];
+  return trace;
+}
+
 function createMap(bikeStations) {
 
   // Create the tile layer that will be the background of our map
@@ -39,18 +53,26 @@ function createMarkers(response) {
 
   // Initialize an array to hold bike markers
   var barMarkers = [];
+  gaugeTrace = setGaugeTrace(3);
+  Plotly.newPlot("gauge", gaugeTrace);
 
   // Loop through the stations array
   for (var index = 0; index < 945; index++) {
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
-    console.log(latLon);
+    console.log(bar.rating)
+    // console.log(latLon);
+
+    function updateGuage(e) {
+      val = +e.rating
+      Plotly.restyle("gauge","value", [val]);
+    }
     
 
     // For each station, create a marker and bind a popup with the station's name
     var barMarker = L.marker(latLon)
-      .bindPopup("<h3>" + bar.name + "<h3><h3>Rating: " + bar.rating + "<h3><h3>Phone: " + bar.display_phone + "</h3>");
-
+      .bindPopup("<h3>" + bar.name + "<h3><h3>Rating: " + bar.rating + "<h3><h3>Phone: " + bar.display_phone + "</h3>")
+      .on('click', updateGuage(this));
     // Add the marker to the bikeMarkers array
     barMarkers.push(barMarker);
   }
