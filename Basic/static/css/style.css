@@ -1,5 +1,7 @@
 html,
-body,
+body{
+  background-color: paleturquoise;
+}
 #map-id {
   height: 600px;
   width: 100%;

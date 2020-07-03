@@ -6,7 +6,7 @@ function setGaugeTrace(){
     mode: "gauge+number+delta",
     gauge: {
       axis: { range: [0, 5]},
-      bar: { color: "grey"},
+      bar: { color: "lightgreen"},
       borderwidth: 3,
       bordercolor: "black",
       steps: [
@@ -19,7 +19,7 @@ function setGaugeTrace(){
   return trace;
 }
 
-function createMap(bikeStations) {
+function createMap(bikeStations, heatArray) {
 
   // Create the tile layer that will be the background of our map
   var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -29,27 +29,45 @@ function createMap(bikeStations) {
     accessToken: API_KEY
   });
 
+  var streets = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+    tileSize: 512,
+    maxZoom: 18,
+    zoomOffset: -1,
+    id: "mapbox/streets-v11",
+    accessToken: API_KEY
+  });
+
   // Create a baseMaps object to hold the lightmap layer
   var baseMaps = {
-    "Light Map": lightmap
+    "Light Map": lightmap,
+    "Street Map": streets
   };
+
+  var heat = L.heatLayer(heatArray, {
+    radius: 30,
+    blur: 15
+  });
 
   // Create an overlayMaps object to hold the bikeStations layer
   var overlayMaps = {
-    "Bike Stations": bikeStations
+    "Bars": bikeStations,
+    "Bar Heatmap" : heat
   };
+
 
   // Create the map object with options
   var map = L.map("map-id", {
     center: [37.7749, -122.4194],
     zoom: 12,
-    layers: [lightmap, bikeStations]
+    layers: [lightmap, streets, bikeStations, heat]
   });
 
   // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(map);
+    
 }
 
 function createMarkers(response) {
@@ -61,7 +79,12 @@ function createMarkers(response) {
   // Initialize an array to hold bike markers
   var barMarkers = [];
   gaugeTrace = setGaugeTrace();
-  Plotly.newPlot("gauge", gaugeTrace);
+  var layout = {
+    paper_bgcolor: 'paleturquoise'
+  };
+  Plotly.newPlot("gauge", gaugeTrace, layout);
+
+  var heatArray = [];
 
   // Loop through the stations array
   for (var index = 0; index < 945; index++) {
@@ -117,10 +140,15 @@ function createMarkers(response) {
       // .fire(updateGauge(bar.rating));
     // Add the marker to the bikeMarkers array
     barMarkers.push(barMarker);
+    
+    heatArray.push(latLon);
+    console.log(latLon)
   }
 
   // Create a layer group made from the bike markers array, pass it into the createMap function
-  createMap(L.layerGroup(barMarkers));
+  console.log(heatArray)
+  createMap(L.layerGroup(barMarkers),heatArray);
+  
 }
 
 
