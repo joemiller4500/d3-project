@@ -1,12 +1,19 @@
-function setGaugeTrace(rating){
+function setGaugeTrace(){
   var trace = [{
     domain: { x: [0, 1], y: [0, 1] },
-    value: rating,
     title: {text: "Bar Rating"},
     type: "indicator",
-		mode: "gauge+number",
+    mode: "gauge+number+delta",
     gauge: {
-      axis: { range: [0, 5]}
+      axis: { range: [0, 5]},
+      bar: { color: "grey"},
+      borderwidth: 3,
+      bordercolor: "black",
+      steps: [
+        { range: [0, 3], color: "red" },
+        { range: [3, 4], color: 'yellow'},
+        { range: [4, 5], color: 'green'}
+      ]
     }
   }];
   return trace;
@@ -53,26 +60,61 @@ function createMarkers(response) {
 
   // Initialize an array to hold bike markers
   var barMarkers = [];
-  gaugeTrace = setGaugeTrace(3);
+  gaugeTrace = setGaugeTrace();
   Plotly.newPlot("gauge", gaugeTrace);
 
   // Loop through the stations array
   for (var index = 0; index < 945; index++) {
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
-    console.log(bar.rating)
+    console.log(bar.rating);
     // console.log(latLon);
 
-    function updateGuage(e) {
-      val = +e.rating
-      Plotly.restyle("gauge","value", [val]);
+    // function updateGauge(e) {
+    //   val = +e.rating;
+    //   console.log(val);
+    //   Plotly.restyle("gauge","value", [val]);
+    // }
+    var old = 0;
+    function traceUpdate(curr) {
+      var update = {
+        reference: old
+      }
+      Plotly.restyle("gauge","value", [curr]);
+      Plotly.restyle("gauge","delta", [update]);
+      console.log(update);
+      old = curr;
     }
     
 
     // For each station, create a marker and bind a popup with the station's name
     var barMarker = L.marker(latLon)
       .bindPopup("<h3>" + bar.name + "<h3><h3>Rating: " + bar.rating + "<h3><h3>Phone: " + bar.display_phone + "</h3>")
-      .on('click', updateGuage(this));
+      .on('click',function updateGauge(bar) {
+        console.log(bar);
+        string = bar.sourceTarget._popup._content;
+        valA = string.slice(-37);
+        valB = valA.slice(0,3);
+        valC = valB.slice(0,1);
+        if (valC == ':'){
+          valB = valB.slice(-1);
+        }
+        valD = string.slice(-6);
+        valE = valD.slice(0,1);
+        if (valE == ' '){
+          valB = string.slice(-23);
+          valB = valB.slice(0,3)
+          console.log(valB);
+          valE = valB.slice(0,1);
+          if (valE = ":") {
+            valB = valB.slice(-1)
+          }
+        }
+        valB = +valB;
+        traceUpdate(valB);
+        // Plotly.restyle("gauge","value", [valB]);
+      })
+      // .fire(updateGauge(bar.rating));
     // Add the marker to the bikeMarkers array
     barMarkers.push(barMarker);
   }
