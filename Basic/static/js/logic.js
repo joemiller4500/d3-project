@@ -38,9 +38,17 @@ function createMap(bikeStations, heatArray) {
     accessToken: API_KEY
   });
 
+  var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "dark-v10",
+    accessToken: API_KEY
+  });
+
   // Create a baseMaps object to hold the lightmap layer
   var baseMaps = {
     "Light Map": lightmap,
+    "Dark Map": darkmap,
     "Street Map": streets
   };
 
@@ -60,13 +68,24 @@ function createMap(bikeStations, heatArray) {
   var map = L.map("map-id", {
     center: [37.7749, -122.4194],
     zoom: 12,
-    layers: [lightmap, streets, bikeStations, heat]
+    layers: [lightmap,  darkmap, streets, bikeStations, heat]
   });
 
   // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(map);
+
+//   slider = L.control.slider(function(value) {
+//     console.log(value);
+// }, {
+//   max: 5,
+//   value: 5,
+//   step:0.5,
+//   size: '250px',
+//   orientation:'vertical',
+//   increment: true
+// }).addTo(map);
     
 }
 
@@ -87,7 +106,7 @@ function createMarkers(response) {
   var heatArray = [];
 
   // Loop through the stations array
-  for (var index = 0; index < 995; index++) {
+  for (var index = 0; index < 945; index++) {
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
     console.log(bar.rating);
@@ -109,9 +128,14 @@ function createMarkers(response) {
       old = curr;
     }
     
+    var icons =
+    L.ExtraMarkers.icon({
+    icon: "ion-ios-wineglass",
+    iconColor: "darkgreen"
+  }); 
 
     // For each station, create a marker and bind a popup with the station's name
-    var barMarker = L.marker(latLon)
+    var barMarker = L.marker((latLon), {icon: icons})
       .bindPopup("<h3>" + bar.name + "<h3><h3>Rating: " + bar.rating + "<h3><h3>Phone: " + bar.display_phone + "</h3>")
       .on('click',function updateGauge(bar) {
         console.log(bar);
@@ -137,6 +161,8 @@ function createMarkers(response) {
         traceUpdate(valB);
         // Plotly.restyle("gauge","value", [valB]);
       })
+    
+
       // .fire(updateGauge(bar.rating));
     // Add the marker to the bikeMarkers array
     barMarkers.push(barMarker);
@@ -154,4 +180,5 @@ function createMarkers(response) {
 
 // Perform an API call to the Citi Bike API to get station information. Call createMarkers when complete
 d3.json('bars_data_output.json', createMarkers);
-
+    
+ 
