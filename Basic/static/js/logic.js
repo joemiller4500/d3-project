@@ -19,6 +19,61 @@ function setGaugeTrace(){
   return trace;
 }
 
+
+function circleChart(data){
+  console.log(data);
+
+  var margin = {top: 10, right: 10, bottom: 10, left: 10},
+      width = 460 - margin.left - margin.right,
+      height = 460 - margin.top - margin.bottom,
+      innerRadius = 80,
+      outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
+
+  // append the svg object to the body of the page
+  var svg = d3.select("#circle")
+    .append("svg")
+      .attr("width", width + margin.left + margin.right)
+      .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + ( height/2+100 )+ ")"); // Add 100 on Y translation, cause upper bars are longer
+
+    // X scale
+    var x = d3.scaleBand()
+        .range([0, 2 * Math.PI])    // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
+        .align(0)                  // This does nothing ?
+        .domain( data.map(function(d) { return d.Country; }) ); // The domain of the X axis is the list of states.
+
+    // Y scale
+    var y = d3.scaleRadial()
+        .range([innerRadius, outerRadius])   // Domain will be define later.
+        .domain([0, 10000]); // Domain of Y is from 0 to the max seen in the data
+
+    // Add bars
+    svg.append("g")
+      .selectAll("path")
+      .data(data)
+      .enter()
+      .append("path")
+        .attr("fill", "#69b3a2")
+        .attr("d", d3.arc()     // imagine your doing a part of a donut plot
+            .innerRadius(innerRadius)
+            .outerRadius(function(d) { return y(d['Value']); })
+            .startAngle(function(d) { return x(d.Country); })
+            .endAngle(function(d) { return x(d.Country) + x.bandwidth(); })
+            .padAngle(0.01)
+            .padRadius(innerRadius))
+
+}
+
+
+// function createCircle(){
+
+//   for (var index = 0; index < 995; index++) {
+//     var bar = response[index];
+
+// }
+
+
 function createMap(bikeStations, heatArray) {
 
   // Create the tile layer that will be the background of our map
@@ -85,14 +140,25 @@ function createMarkers(response) {
   Plotly.newPlot("gauge", gaugeTrace, layout);
 
   var heatArray = [];
+  var cats = [];
 
   // Loop through the stations array
   for (var index = 0; index < 945; index++) {
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
-    console.log(bar.rating);
-    // console.log(latLon);
-
+    category = bar.categories;
+    var obj = category.split("'");
+    // console.log(obj);
+    // console.log(obj[7]);
+    cats.push(obj[7])
+    if (obj[15]){
+      // console.log(obj[15]);
+      cats.push(obj[15]);
+    }
+    if (obj[23]){
+      // console.log(obj[23]);
+      cats.push(obj[23]);
+    }
     // function updateGauge(e) {
     //   val = +e.rating;
     //   console.log(val);
@@ -105,50 +171,75 @@ function createMarkers(response) {
       }
       Plotly.restyle("gauge","value", [curr]);
       Plotly.restyle("gauge","delta", [update]);
-      console.log(update);
+      // console.log(update);
       old = curr;
     }
     
 
     // For each station, create a marker and bind a popup with the station's name
     var barMarker = L.marker(latLon)
-      .bindPopup("<h3>" + bar.name + "<h3><h3>Rating: " + bar.rating + "<h3><h3>Phone: " + bar.display_phone + "</h3>")
+      .bindPopup("<h3><a target='_blank' href='" + bar.url +"'>Yelp Listing</a> </h3><h3>" + bar.name + "</h3><h3>Rating: " + bar.rating + "</h3><h3>Phone: " + bar.display_phone + "</h3>")
       .on('click',function updateGauge(bar) {
-        console.log(bar);
         string = bar.sourceTarget._popup._content;
-        valA = string.slice(-37);
-        valB = valA.slice(0,3);
-        valC = valB.slice(0,1);
-        if (valC == ':'){
-          valB = valB.slice(-1);
+        console.log(string)
+        bonus = string.split(" ");
+        console.log(bonus);
+        var len = bonus.length - 2;
+        var slcVal = bonus[len];
+        check = slcVal.slice(0,1);
+        if (check == "("){
+          slcVal = bonus[(len-1)]
         }
-        valD = string.slice(-6);
-        valE = valD.slice(0,1);
-        if (valE == ' '){
-          valB = string.slice(-23);
-          valB = valB.slice(0,3)
-          console.log(valB);
-          valE = valB.slice(0,1);
-          if (valE = ":") {
-            valB = valB.slice(-1)
-          }
+        checkB = slcVal.slice(3,4);
+        if (checkB == "<"){
+          val = slcVal.slice(0,3);
         }
-        valB = +valB;
-        traceUpdate(valB);
-        // Plotly.restyle("gauge","value", [valB]);
+        else {
+          val = slcVal.slice(0,1);
+        }
+        traceUpdate(val);
       })
-      // .fire(updateGauge(bar.rating));
-    // Add the marker to the bikeMarkers array
+
     barMarkers.push(barMarker);
     
     heatArray.push(latLon);
-    console.log(latLon)
   }
 
   // Create a layer group made from the bike markers array, pass it into the createMap function
-  console.log(heatArray)
+  // console.log(heatArray)
   createMap(L.layerGroup(barMarkers),heatArray);
+  console.log(cats);
+  // var result = cats.reduce( (acc, o) => (acc[o.name] = (acc[o.name] || 0)+1, acc), {} );
+  // console.log(result);
+  // sorted = result.sort();
+  // console.log(sorted)
+  // console.log(cats.sort())
+  var sorted = cats.sort();
+  console.log(sorted);
+  var prev = sorted[0]
+  var count = 1;
+  var named = [];
+  var counted = [];
+  for (var index = 0; index < sorted.length; index++){
+    if (sorted[index] == prev){
+      count ++;
+    }
+    else{
+      named.push(prev);
+      counted.push(count);
+      prev = sorted[index];
+      count = 1;
+    }
+  }
+  console.log(named);
+  console.log(counted);
   
+  var keyed = named.map(function(e, i) {
+    return [e, counted[i]];
+  });
+
+  console.log(keyed)
+  circleChart(counted);
 }
 
 
