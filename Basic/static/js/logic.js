@@ -19,7 +19,7 @@ function setGaugeTrace(){
   return trace;
 }
 
-function createMap(bikeStations, heatArray) {
+function createMap(barStations, topBarId, heatArray) {
 
   // Create the tile layer that will be the background of our map
   var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -59,8 +59,9 @@ function createMap(bikeStations, heatArray) {
 
   // Create an overlayMaps object to hold the bikeStations layer
   var overlayMaps = {
-    "Bars": bikeStations,
-    "Bar Heatmap" : heat
+    "All Bars": barStations,
+    "Bar Heatmap" : heat,
+    "Top bars": topBarId
   };
 
 
@@ -68,14 +69,14 @@ function createMap(bikeStations, heatArray) {
   var map = L.map("map-id", {
     center: [37.7749, -122.4194],
     zoom: 12,
-    layers: [lightmap,  darkmap, streets, bikeStations, heat]
+    layers: [lightmap,  darkmap, streets, barStations, topBarId, heat]
   });
 
   // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(map);
-
+  
 //   slider = L.control.slider(function(value) {
 //     console.log(value);
 // }, {
@@ -93,6 +94,7 @@ function createMarkers(response) {
 
   console.log(response);
   var topBars = response.filter(d => d.rating>=4.5);
+  console.log(topBars)
 
   // Pull the "stations" property off of response.data
   // var stations = response.data.stations;
@@ -111,7 +113,7 @@ function createMarkers(response) {
   for (var index = 0; index < 995; index++) {
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
-    console.log(bar.rating);
+    // console.log(bar.rating);
     // console.log(latLon);
 
     // function updateGauge(e) {
@@ -141,29 +143,26 @@ function createMarkers(response) {
     var barMarker = L.marker((latLon), {icon: icons})
       .bindPopup("<h3><a target='_blank' href='" + bar.url +"'>Yelp Listing</a> </h3><h3>" + bar.name + "</h3><h3>Rating: " + bar.rating + "</h3><h3>Phone: " + bar.display_phone + "</h3>")
       .on('click',function updateGauge(bar) {
-        console.log(bar);
         string = bar.sourceTarget._popup._content;
-        valA = string.slice(-37);
-        valB = valA.slice(0,3);
-        valC = valB.slice(0,1);
-        if (valC == ':'){
-          valB = valB.slice(-1);
+        console.log(string)
+        bonus = string.split(" ");
+        console.log(bonus);
+        var len = bonus.length - 2;
+        var slcVal = bonus[len];
+        check = slcVal.slice(0,1);
+        if (check == "("){
+          slcVal = bonus[(len-1)]
         }
-        valD = string.slice(-6);
-        valE = valD.slice(0,1);
-        if (valE == ' '){
-          valB = string.slice(-23);
-          valB = valB.slice(0,3)
-          console.log(valB);
-          valE = valB.slice(0,1);
-          if (valE = ":") {
-            valB = valB.slice(-1)
-          }
+        checkB = slcVal.slice(3,4);
+        if (checkB == "<"){
+          val = slcVal.slice(0,3);
         }
-        valB = +valB;
-        traceUpdate(valB);
-        // Plotly.restyle("gauge","value", [valB]);
+        else {
+          val = slcVal.slice(0,1);
+        }
+        traceUpdate(val);
       })
+        // Plotly.restyle("gauge","value", [valB]);
     
 
       // .fire(updateGauge(bar.rating));
@@ -171,80 +170,76 @@ function createMarkers(response) {
     barMarkers.push(barMarker);
     
     heatArray.push(latLon);
-    console.log(latLon)
+    // console.log(latLon)
   }
 
   // // Initialize an array to hold bike markers
-  // var topBarMarkers = [];
+  var topBarMarkers = [];
 
-  // // Loop through the stations array
-  // for (var index = 0; index < topBars.length; index++) {
-  //   var bar = response[index];
-  //   latLon = [+bar.latitude, +bar.longitude];
-  //   console.log(bar.rating);
-  //   // console.log(latLon);
+  // Loop through the stations array
+  for (var index = 0; index < topBars.length; index++) {
+    var topBar = response[index];
+    topLatLon = [+topBar.latitude, +topBar.longitude];
+    // console.log(topLatLon)
+    // console.log(bar.rating);
+    // console.log(latLon);
 
-  //   // function updateGauge(e) {
-  //   //   val = +e.rating;
-  //   //   console.log(val);
-  //   //   Plotly.restyle("gauge","value", [val]);
-  //   // }
-  //   var old = 0;
-  //   function traceUpdate(curr) {
-  //     var update = {
-  //       reference: old
-  //     }
-  //     Plotly.restyle("gauge","value", [curr]);
-  //     Plotly.restyle("gauge","delta", [update]);
-  //     console.log(update);
-  //     old = curr;
-  //   }
+    // function updateGauge(e) {
+    //   val = +e.rating;
+    //   console.log(val);
+    //   Plotly.restyle("gauge","value", [val]);
+    // }
+    var old2 = 0;
+    function traceUpdate(curr2) {
+      var update2 = {
+        reference: old2
+      }
+      Plotly.restyle("gauge","value", [curr2]);
+      Plotly.restyle("gauge","delta", [update2]);
+      console.log(update2);
+      old2 = curr2;
+    }
     
-  //   var icons =
-  //   L.ExtraMarkers.icon({
-  //   icon: "ion-ios-wineglass",
-  //   iconColor: "darkgreen",
-  //   size: "large"
-  // }); 
+    var topIcons =
+    L.ExtraMarkers.icon({
+      icon: "ion-ios-star",
+      iconColor: "darkorange",
+  }); 
 
-  //   // For each station, create a marker and bind a popup with the station's name
-  //   var topBarMarker = L.marker((latLon), {icon: icons})
-  //     .bindPopup("<h3>" + bar.name + "<h3><h3>Rating: " + bar.rating + "<h3><h3>Phone: " + bar.display_phone + "</h3>")
-  //     .on('click',function updateGauge(bar) {
-  //       console.log(bar);
-  //       string = bar.sourceTarget._popup._content;
-  //       valA = string.slice(-37);
-  //       valB = valA.slice(0,3);
-  //       valC = valB.slice(0,1);
-  //       if (valC == ':'){
-  //         valB = valB.slice(-1);
-  //       }
-  //       valD = string.slice(-6);
-  //       valE = valD.slice(0,1);
-  //       if (valE == ' '){
-  //         valB = string.slice(-23);
-  //         valB = valB.slice(0,3)
-  //         console.log(valB);
-  //         valE = valB.slice(0,1);
-  //         if (valE = ":") {
-  //           valB = valB.slice(-1)
-  //         }
-  //       }
-  //       valB = +valB;
-  //       traceUpdate(valB);
-  //       // Plotly.restyle("gauge","value", [valB]);
-  //     })
+    // For each station, create a marker and bind a popup with the station's name
+    var topBarMarker = L.marker((topLatLon), {icon: topIcons})
+    .bindPopup("<h3><a target='_blank' href='" + topBar.url +"'>Yelp Listing</a> </h3><h3>" + topBar.name + "</h3><h3>Rating: " + topBar.rating + "</h3><h3>Phone: " + topBar.display_phone + "</h3>")
+    .on('click',function updateGauge(bar) {
+      string = bar.sourceTarget._popup._content;
+      console.log(string)
+      bonus = string.split(" ");
+      console.log(bonus);
+      var len = bonus.length - 2;
+      var slcVal = bonus[len];
+      check = slcVal.slice(0,1);
+      if (check == "("){
+        slcVal = bonus[(len-1)]
+      }
+      checkB = slcVal.slice(3,4);
+      if (checkB == "<"){
+        val = slcVal.slice(0,3);
+      }
+      else {
+        val = slcVal.slice(0,1);
+      }
+      traceUpdate(val);
+    })
     
 
   //     // .fire(updateGauge(bar.rating));
   //   // Add the marker to the bikeMarkers array
-  //   topBarMarkers.push(topBarMarker);
-  // }
+    topBarMarkers.push(topBarMarker);
+  }
 
   // Create a layer group made from the bike markers array, pass it into the createMap function
   console.log(heatArray)
-  createMap(L.layerGroup(barMarkers),heatArray);
-  
+  createMap(L.layerGroup(barMarkers), L.layerGroup(topBarMarkers),heatArray)
+ 
 }
 
 
