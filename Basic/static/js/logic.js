@@ -127,7 +127,7 @@ function createMarkers(response) {
   var numRats = [];
   var checky = 0
   // Loop through the stations array
-  for (var index = 0; index < 945; index++) {
+  for (var index = 0; index < 995; index++) {
     checky++
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
@@ -211,7 +211,7 @@ function createMarkers(response) {
   var topBarMarkers = [];
   var checkyA = 0
   // Loop through the stations array
-  for (var index = 0; index < 189; index++) {
+  for (var index = 0; index < 204; index++) {
     var topBar = topBars[index];
     checkyA++
     // console.log(topBar)
