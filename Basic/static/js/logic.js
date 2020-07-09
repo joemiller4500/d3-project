@@ -19,51 +19,84 @@ function setGaugeTrace(){
   return trace;
 }
 
-
-function circleChart(data){
-  console.log(data);
-
-  var margin = {top: 10, right: 10, bottom: 10, left: 10},
-      width = 460 - margin.left - margin.right,
-      height = 460 - margin.top - margin.bottom,
-      innerRadius = 80,
-      outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
-
-  // append the svg object to the body of the page
-  var svg = d3.select("#circle")
-    .append("svg")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-      .attr("transform", "translate(" + width / 2 + "," + ( height/2+100 )+ ")"); // Add 100 on Y translation, cause upper bars are longer
-
-    // X scale
-    var x = d3.scaleBand()
-        .range([0, 2 * Math.PI])    // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
-        .align(0)                  // This does nothing ?
-        .domain( data.map(function(d) { return d.Country; }) ); // The domain of the X axis is the list of states.
-
-    // Y scale
-    var y = d3.scaleRadial()
-        .range([innerRadius, outerRadius])   // Domain will be define later.
-        .domain([0, 10000]); // Domain of Y is from 0 to the max seen in the data
-
-    // Add bars
-    svg.append("g")
-      .selectAll("path")
-      .data(data)
-      .enter()
-      .append("path")
-        .attr("fill", "#69b3a2")
-        .attr("d", d3.arc()     // imagine your doing a part of a donut plot
-            .innerRadius(innerRadius)
-            .outerRadius(function(d) { return y(d['Value']); })
-            .startAngle(function(d) { return x(d.Country); })
-            .endAngle(function(d) { return x(d.Country) + x.bandwidth(); })
-            .padAngle(0.01)
-            .padRadius(innerRadius))
-
+function setBubbleTrace(titles, count, avgRating, avgNumRating){
+  var size = count.map(c => (Math.sqrt(c) *5))
+  console.log(size)
+  var trace = [{
+    x : avgNumRating,
+    y : avgRating,
+    text: titles,
+    mode: 'markers',
+    marker:{
+      color : titles,
+      size: size
+    }
+  }];
+  return trace;
 }
+
+
+// function circleChart(data){
+//   console.log(data);
+
+//   var margin = {top: 10, right: 10, bottom: 10, left: 10},
+//       width = 460 - margin.left - margin.right,
+//       height = 460 - margin.top - margin.bottom,
+//       innerRadius = 80,
+//       outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
+
+//   // append the svg object to the body of the page
+//   var svg = d3.select("#circle")
+//     .append("svg")
+//       .attr("width", width + margin.left + margin.right)
+//       .attr("height", height + margin.top + margin.bottom)
+//     .append("g")
+//       .attr("transform", "translate(" + width / 2 + "," + ( height/2+100 )+ ")"); // Add 100 on Y translation, cause upper bars are longer
+
+//     // X scale
+//     var x = d3.scaleBand()
+//         .range([0, 2 * Math.PI])    // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
+//         .align(0)                  // This does nothing ?
+//         .domain( data.map(function(d) { return d.Country; }) ); // The domain of the X axis is the list of states.
+
+//     // Y scale
+//     var y = d3.scaleRadial()
+//         .range([innerRadius, outerRadius])   // Domain will be define later.
+//         .domain([0, 10000]); // Domain of Y is from 0 to the max seen in the data
+
+//     // Add bars
+//     svg.append("g")
+//       .selectAll("path")
+//       .data(data)
+//       .enter()
+//       .append("path")
+//         .attr("fill", "#69b3a2")
+//         .attr("d", d3.arc()     // imagine your doing a part of a donut plot
+//             .innerRadius(innerRadius)
+//             .outerRadius(function(d) { return y(d['Value']); })
+//             .startAngle(function(d) { return x(d.Country); })
+//             .endAngle(function(d) { return x(d.Country) + x.bandwidth(); })
+//             .padAngle(0.01)
+//             .padRadius(innerRadius))
+
+// }
+
+// function bubbleChart(labels,xAxis,yAxis,zAxis){
+// 	$("#bubble").CanvasJSChart({
+// 		title: {
+// 			text: "Bubble Chart"
+// 		},
+// 		data: [
+// 		{
+// 			type: "bubble",
+// 			toolTipContent: "x: {x} & y: {y} <br/>Size: {z}",
+// 			dataPoints: [
+//         {x: xAxis, y: yAxis, z: zAxis}
+// 			]
+// 		}
+// 		]
+// 	});
+// }
 
 
 // function createCircle(){
@@ -126,7 +159,7 @@ function createMap(bikeStations, heatArray) {
 }
 
 function createMarkers(response) {
-  console.log(response[0].alias);
+  console.log(response);
 
   // Pull the "stations" property off of response.data
   // var stations = response.data.stations;
@@ -141,12 +174,20 @@ function createMarkers(response) {
 
   var heatArray = [];
   var cats = [];
+  var rats = [];
+  var numRats = [];
 
   // Loop through the stations array
   for (var index = 0; index < 945; index++) {
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
     category = bar.categories;
+    rating = bar.rating;
+    numRating = bar.review_count;
+    // console.log(numRating);
+    rats.push(rating);
+    numRats.push(numRating);
+    // console.log(rating);
     var obj = category.split("'");
     // console.log(obj);
     // console.log(obj[7]);
@@ -154,10 +195,14 @@ function createMarkers(response) {
     if (obj[15]){
       // console.log(obj[15]);
       cats.push(obj[15]);
+      rats.push(rating);
+      numRats.push(numRating);
     }
     if (obj[23]){
       // console.log(obj[23]);
       cats.push(obj[23]);
+      rats.push(rating);
+      numRats.push(numRating);
     }
     // function updateGauge(e) {
     //   val = +e.rating;
@@ -174,6 +219,9 @@ function createMarkers(response) {
       // console.log(update);
       old = curr;
     }
+
+    // console.log(rats)
+    // console.log(numRats)
     
 
     // For each station, create a marker and bind a popup with the station's name
@@ -181,9 +229,9 @@ function createMarkers(response) {
       .bindPopup("<h3><a target='_blank' href='" + bar.url +"'>Yelp Listing</a> </h3><h3>" + bar.name + "</h3><h3>Rating: " + bar.rating + "</h3><h3>Phone: " + bar.display_phone + "</h3>")
       .on('click',function updateGauge(bar) {
         string = bar.sourceTarget._popup._content;
-        console.log(string)
+        // console.log(string)
         bonus = string.split(" ");
-        console.log(bonus);
+        // console.log(bonus);
         var len = bonus.length - 2;
         var slcVal = bonus[len];
         check = slcVal.slice(0,1);
@@ -208,38 +256,78 @@ function createMarkers(response) {
   // Create a layer group made from the bike markers array, pass it into the createMap function
   // console.log(heatArray)
   createMap(L.layerGroup(barMarkers),heatArray);
-  console.log(cats);
+  // console.log(cats);
   // var result = cats.reduce( (acc, o) => (acc[o.name] = (acc[o.name] || 0)+1, acc), {} );
   // console.log(result);
   // sorted = result.sort();
   // console.log(sorted)
   // console.log(cats.sort())
-  var sorted = cats.sort();
-  console.log(sorted);
-  var prev = sorted[0]
+  var keyedRatings = cats.map(function(e, i) {
+    return[e, rats[i], numRats[i]];
+  })
+  // console.log(keyedRatings)
+  var sortedRatings = keyedRatings.sort(function(a, b) {
+    a = a[0];
+    b = b[0];
+    return a.localeCompare(b);
+  });
+  console.log(sortedRatings);
+  // var sorted = cats.sort();
+  // console.log(sorted);
+  var prev = sortedRatings[0][0]
   var count = 1;
   var named = [];
   var counted = [];
-  for (var index = 0; index < sorted.length; index++){
-    if (sorted[index] == prev){
+  var averaged = [];
+  var averagedNum = [];
+  var ratTot = sortedRatings[0][1];
+  var numRatTot = sortedRatings[0][2];
+  var ratTotCount = 0;
+  for (var index = 0; index < sortedRatings.length; index++){
+    // console.log(sortedRatings[index][0])
+    if (sortedRatings[index][0] == prev){
       count ++;
+      ratTotCount++;
+      ratTot = ratTot + sortedRatings[index][1];
+      numRatTot = numRatTot + sortedRatings[index][2];
     }
     else{
+      // console.log(ratTot);
+      avg = (ratTot / ratTotCount);
+      avgNum = (numRatTot / ratTotCount);
+      ratTot = sortedRatings[index][1];
+      numRatTot = sortedRatings[index][2];
       named.push(prev);
       counted.push(count);
-      prev = sorted[index];
+      averaged.push(avg);
+      averagedNum.push(avgNum);
+      prev = sortedRatings[index][0];
       count = 1;
+      ratTotCount = 1;
     }
   }
-  console.log(named);
-  console.log(counted);
+  // console.log(named);
+  // console.log(counted);
+  // console.log(averaged);
+  // console.log(averagedNum);
   
   var keyed = named.map(function(e, i) {
-    return [e, counted[i]];
+    return [e, counted[i], averaged[i], averagedNum[i]];
   });
 
   console.log(keyed)
-  circleChart(counted);
+  var sortedArray = keyed.sort(function(a, b) {
+    return b[1] - a[1];
+  });
+  console.log(sortedArray);
+  titles = sortedArray.map(e => e[0]);
+  count = sortedArray.map(e => e[1]);
+  avgRating = sortedArray.map(e => e[2]);
+  avgNumRating = sortedArray.map(e => e[3]);
+  // console.log(titles)
+  // circleChart(counted);
+  var bubbleTrace = setBubbleTrace(titles, count, avgRating, avgNumRating);
+  Plotly.newPlot("bubble", bubbleTrace, layout);
 }
 
 
