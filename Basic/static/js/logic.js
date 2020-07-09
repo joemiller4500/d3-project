@@ -19,7 +19,7 @@ function setGaugeTrace(){
   return trace;
 }
 
-function setBubbleTrace(titles, count, avgRating, avgNumRating){
+function setBubbleTrace(titles, count, avgRating, avgNumRating, layout){
   var size = count.map(c => (Math.sqrt(c) *5))
   console.log(size)
   var trace = [{
@@ -32,7 +32,8 @@ function setBubbleTrace(titles, count, avgRating, avgNumRating){
       size: size
     }
   }];
-  return trace;
+  // return trace;
+  Plotly.newPlot("bubble", trace, layout);
 }
 
 
@@ -326,10 +327,10 @@ function createMarkers(response) {
   avgNumRating = sortedArray.map(e => e[3]);
   // console.log(titles)
   // circleChart(counted);
-  var bubbleTrace = setBubbleTrace(titles, count, avgRating, avgNumRating);
-  Plotly.newPlot("bubble", bubbleTrace, layout);
+  var bubbleTrace = setBubbleTrace(titles, count, avgRating, avgNumRating, layout);
+  window.addEventListener('resize', setBubbleTrace(titles, count, avgRating, avgNumRating,layout));
+  // Plotly.newPlot("bubble", bubbleTrace, layout);
 }
-
 
 // Perform an API call to the Citi Bike API to get station information. Call createMarkers when complete
 d3.json('bars_data_output.json', createMarkers);
