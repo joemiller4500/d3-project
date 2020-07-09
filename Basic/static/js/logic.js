@@ -57,7 +57,7 @@ function createMap(barStations, topBarId, heatArray) {
     blur: 15
   });
 
-  // Create an overlayMaps object to hold the bikeStations layer
+  // Create an overlayMaps object to hold the barStations layer
   var overlayMaps = {
     "All Bars": barStations,
     "Bar Heatmap" : heat,
@@ -93,13 +93,11 @@ function createMap(barStations, topBarId, heatArray) {
 function createMarkers(response) {
 
   console.log(response);
-  var topBars = response.filter(d => d.rating>=4.5);
-  console.log(topBars)
 
   // Pull the "stations" property off of response.data
   // var stations = response.data.stations;
 
-  // Initialize an array to hold bike markers
+  // Initialize an array to hold bar markers
   var barMarkers = [];
   gaugeTrace = setGaugeTrace();
   var layout = {
@@ -132,12 +130,10 @@ function createMarkers(response) {
       old = curr;
     }
     
-    var icons =
-    L.ExtraMarkers.icon({
-    icon: "ion-ios-wineglass",
-    iconColor: "darkgreen",
-    size: "large"
-  }); 
+    var icons = L.icon({
+      iconUrl: 'glass.png',
+      iconSize: [30, 30], // size of the icon
+  });
 
     // For each station, create a marker and bind a popup with the station's name
     var barMarker = L.marker((latLon), {icon: icons})
@@ -166,44 +162,29 @@ function createMarkers(response) {
     
 
       // .fire(updateGauge(bar.rating));
-    // Add the marker to the bikeMarkers array
+    // Add the marker to the barMarkers array
     barMarkers.push(barMarker);
     
     heatArray.push(latLon);
     // console.log(latLon)
   }
 
-  // // Initialize an array to hold bike markers
+  var topBars = response.filter(d => d.rating>=4.5);
+  console.log(topBars)
+
+  // // Initialize an array to hold top bar markers
   var topBarMarkers = [];
 
   // Loop through the stations array
-  for (var index = 0; index < topBars.length; index++) {
-    var topBar = response[index];
+  for (var index = 0; index < 204; index++) {
+    var topBar = topBars[index];
+    // console.log(topBar)
     topLatLon = [+topBar.latitude, +topBar.longitude];
     // console.log(topLatLon)
-    // console.log(bar.rating);
-    // console.log(latLon);
-
-    // function updateGauge(e) {
-    //   val = +e.rating;
-    //   console.log(val);
-    //   Plotly.restyle("gauge","value", [val]);
-    // }
-    var old2 = 0;
-    function traceUpdate(curr2) {
-      var update2 = {
-        reference: old2
-      }
-      Plotly.restyle("gauge","value", [curr2]);
-      Plotly.restyle("gauge","delta", [update2]);
-      console.log(update2);
-      old2 = curr2;
-    }
     
-    var topIcons =
-    L.ExtraMarkers.icon({
-      icon: "ion-ios-star",
-      iconColor: "darkorange",
+    var topIcons = L.icon({
+      iconUrl: 'star.png',
+      iconSize: [24, 24], // size of the icon
   }); 
 
     // For each station, create a marker and bind a popup with the station's name
@@ -232,18 +213,18 @@ function createMarkers(response) {
     
 
   //     // .fire(updateGauge(bar.rating));
-  //   // Add the marker to the bikeMarkers array
+  //   // Add the marker to the topBarMarkers array
     topBarMarkers.push(topBarMarker);
   }
 
-  // Create a layer group made from the bike markers array, pass it into the createMap function
+  // Create a layer group made from the bar markers array, pass it into the createMap function
   console.log(heatArray)
   createMap(L.layerGroup(barMarkers), L.layerGroup(topBarMarkers),heatArray)
  
 }
 
 
-// Perform an API call to the Citi Bike API to get station information. Call createMarkers when complete
+// Perform an API call to the Yelp API to get station information. Call createMarkers when complete
 d3.json('bars_data_output.json', createMarkers);
     
  
