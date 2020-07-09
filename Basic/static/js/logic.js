@@ -36,79 +36,7 @@ function setBubbleTrace(titles, count, avgRating, avgNumRating, layout){
   Plotly.newPlot("bubble", trace, layout);
 }
 
-
-// function circleChart(data){
-//   console.log(data);
-
-//   var margin = {top: 10, right: 10, bottom: 10, left: 10},
-//       width = 460 - margin.left - margin.right,
-//       height = 460 - margin.top - margin.bottom,
-//       innerRadius = 80,
-//       outerRadius = Math.min(width, height) / 2;   // the outerRadius goes from the middle of the SVG area to the border
-
-//   // append the svg object to the body of the page
-//   var svg = d3.select("#circle")
-//     .append("svg")
-//       .attr("width", width + margin.left + margin.right)
-//       .attr("height", height + margin.top + margin.bottom)
-//     .append("g")
-//       .attr("transform", "translate(" + width / 2 + "," + ( height/2+100 )+ ")"); // Add 100 on Y translation, cause upper bars are longer
-
-//     // X scale
-//     var x = d3.scaleBand()
-//         .range([0, 2 * Math.PI])    // X axis goes from 0 to 2pi = all around the circle. If I stop at 1Pi, it will be around a half circle
-//         .align(0)                  // This does nothing ?
-//         .domain( data.map(function(d) { return d.Country; }) ); // The domain of the X axis is the list of states.
-
-//     // Y scale
-//     var y = d3.scaleRadial()
-//         .range([innerRadius, outerRadius])   // Domain will be define later.
-//         .domain([0, 10000]); // Domain of Y is from 0 to the max seen in the data
-
-//     // Add bars
-//     svg.append("g")
-//       .selectAll("path")
-//       .data(data)
-//       .enter()
-//       .append("path")
-//         .attr("fill", "#69b3a2")
-//         .attr("d", d3.arc()     // imagine your doing a part of a donut plot
-//             .innerRadius(innerRadius)
-//             .outerRadius(function(d) { return y(d['Value']); })
-//             .startAngle(function(d) { return x(d.Country); })
-//             .endAngle(function(d) { return x(d.Country) + x.bandwidth(); })
-//             .padAngle(0.01)
-//             .padRadius(innerRadius))
-
-// }
-
-// function bubbleChart(labels,xAxis,yAxis,zAxis){
-// 	$("#bubble").CanvasJSChart({
-// 		title: {
-// 			text: "Bubble Chart"
-// 		},
-// 		data: [
-// 		{
-// 			type: "bubble",
-// 			toolTipContent: "x: {x} & y: {y} <br/>Size: {z}",
-// 			dataPoints: [
-//         {x: xAxis, y: yAxis, z: zAxis}
-// 			]
-// 		}
-// 		]
-// 	});
-// }
-
-
-// function createCircle(){
-
-//   for (var index = 0; index < 995; index++) {
-//     var bar = response[index];
-
-// }
-
-
-function createMap(bikeStations, heatArray) {
+function createMap(barStations, topBarId, heatArray) {
 
   // Create the tile layer that will be the background of our map
   var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -127,9 +55,17 @@ function createMap(bikeStations, heatArray) {
     accessToken: API_KEY
   });
 
+  var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
+    maxZoom: 18,
+    id: "dark-v10",
+    accessToken: API_KEY
+  });
+
   // Create a baseMaps object to hold the lightmap layer
   var baseMaps = {
     "Light Map": lightmap,
+    "Dark Map": darkmap,
     "Street Map": streets
   };
 
@@ -138,10 +74,11 @@ function createMap(bikeStations, heatArray) {
     blur: 15
   });
 
-  // Create an overlayMaps object to hold the bikeStations layer
+  // Create an overlayMaps object to hold the barStations layer
   var overlayMaps = {
-    "Bars": bikeStations,
-    "Bar Heatmap" : heat
+    "All Bars": barStations,
+    "Bar Heatmap" : heat,
+    "Top bars": topBarId
   };
 
 
@@ -149,7 +86,7 @@ function createMap(bikeStations, heatArray) {
   var map = L.map("map-id", {
     center: [37.7749, -122.4194],
     zoom: 12,
-    layers: [lightmap, streets, bikeStations, heat]
+    layers: [lightmap,  darkmap, streets, barStations, topBarId, heat]
   });
 
   // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
@@ -157,6 +94,17 @@ function createMap(bikeStations, heatArray) {
     collapsed: false
   }).addTo(map);
     
+  //   slider = L.control.slider(function(value) {
+  //     console.log(value);
+  // }, {
+  //   max: 5,
+  //   value: 5,
+  //   step:0.5,
+  //   size: '250px',
+  //   orientation:'vertical',
+  //   increment: true
+  // }).addTo(map);
+      
 }
 
 function createMarkers(response) {
@@ -165,7 +113,7 @@ function createMarkers(response) {
   // Pull the "stations" property off of response.data
   // var stations = response.data.stations;
 
-  // Initialize an array to hold bike markers
+  // Initialize an array to hold bar markers
   var barMarkers = [];
   gaugeTrace = setGaugeTrace();
   var layout = {
@@ -177,11 +125,13 @@ function createMarkers(response) {
   var cats = [];
   var rats = [];
   var numRats = [];
-
+  var checky = 0
   // Loop through the stations array
   for (var index = 0; index < 945; index++) {
+    checky++
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
+    // console.log(checky)
     category = bar.categories;
     rating = bar.rating;
     numRating = bar.review_count;
@@ -221,12 +171,13 @@ function createMarkers(response) {
       old = curr;
     }
 
-    // console.log(rats)
-    // console.log(numRats)
-    
+    var icons = L.icon({
+      iconUrl: 'glass.png',
+      iconSize: [30, 30], // size of the icon
+  });
 
     // For each station, create a marker and bind a popup with the station's name
-    var barMarker = L.marker(latLon)
+    var barMarker = L.marker((latLon), {icon: icons})
       .bindPopup("<h3><a target='_blank' href='" + bar.url +"'>Yelp Listing</a> </h3><h3>" + bar.name + "</h3><h3>Rating: " + bar.rating + "</h3><h3>Phone: " + bar.display_phone + "</h3>")
       .on('click',function updateGauge(bar) {
         string = bar.sourceTarget._popup._content;
@@ -253,10 +204,59 @@ function createMarkers(response) {
     
     heatArray.push(latLon);
   }
+  var topBars = response.filter(d => d.rating>=4.5);
+  console.log(topBars)
 
-  // Create a layer group made from the bike markers array, pass it into the createMap function
-  // console.log(heatArray)
-  createMap(L.layerGroup(barMarkers),heatArray);
+  // // Initialize an array to hold top bar markers
+  var topBarMarkers = [];
+  var checkyA = 0
+  // Loop through the stations array
+  for (var index = 0; index < 189; index++) {
+    var topBar = topBars[index];
+    checkyA++
+    // console.log(topBar)
+    topLatLon = [+topBar.latitude, +topBar.longitude];
+    console.log(topLatLon)
+    console.log(checkyA)
+    
+    var topIcons = L.icon({
+      iconUrl: 'star.png',
+      iconSize: [24, 24], // size of the icon
+  }); 
+
+    // For each station, create a marker and bind a popup with the station's name
+    var topBarMarker = L.marker((topLatLon), {icon: topIcons})
+    .bindPopup("<h3><a target='_blank' href='" + topBar.url +"'>Yelp Listing</a> </h3><h3>" + topBar.name + "</h3><h3>Rating: " + topBar.rating + "</h3><h3>Phone: " + topBar.display_phone + "</h3>")
+    .on('click',function updateGauge(bar) {
+      string = bar.sourceTarget._popup._content;
+      console.log(string)
+      bonus = string.split(" ");
+      console.log(bonus);
+      var len = bonus.length - 2;
+      var slcVal = bonus[len];
+      check = slcVal.slice(0,1);
+      if (check == "("){
+        slcVal = bonus[(len-1)]
+      }
+      checkB = slcVal.slice(3,4);
+      if (checkB == "<"){
+        val = slcVal.slice(0,3);
+      }
+      else {
+        val = slcVal.slice(0,1);
+      }
+      traceUpdate(val);
+    })
+    
+
+  //     // .fire(updateGauge(bar.rating));
+  //   // Add the marker to the topBarMarkers array
+    topBarMarkers.push(topBarMarker);
+  }
+
+  // Create a layer group made from the bar markers array, pass it into the createMap function
+  console.log(heatArray)
+  createMap(L.layerGroup(barMarkers), L.layerGroup(topBarMarkers),heatArray)
   // console.log(cats);
   // var result = cats.reduce( (acc, o) => (acc[o.name] = (acc[o.name] || 0)+1, acc), {} );
   // console.log(result);
@@ -332,5 +332,6 @@ function createMarkers(response) {
   // Plotly.newPlot("bubble", bubbleTrace, layout);
 }
 
-// Perform an API call to the Citi Bike API to get station information. Call createMarkers when complete
+
+// Perform an API call to the Yelp API to get station information. Call createMarkers when complete
 d3.json('bars_data_output.json', createMarkers);
