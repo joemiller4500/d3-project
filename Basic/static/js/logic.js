@@ -19,6 +19,23 @@ function setGaugeTrace(){
   return trace;
 }
 
+function setBubbleTrace(titles, count, avgRating, avgNumRating, layout){
+  var size = count.map(c => (Math.sqrt(c) *5))
+  console.log(size)
+  var trace = [{
+    x : avgNumRating,
+    y : avgRating,
+    text: titles,
+    mode: 'markers',
+    marker:{
+      color : size,
+      size: size
+    }
+  }];
+  // return trace;
+  Plotly.newPlot("bubble", trace, layout);
+}
+
 function createMap(barStations, topBarId, heatArray) {
 
   // Create the tile layer that will be the background of our map
@@ -76,22 +93,21 @@ function createMap(barStations, topBarId, heatArray) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(map);
-  
-//   slider = L.control.slider(function(value) {
-//     console.log(value);
-// }, {
-//   max: 5,
-//   value: 5,
-//   step:0.5,
-//   size: '250px',
-//   orientation:'vertical',
-//   increment: true
-// }).addTo(map);
     
+  //   slider = L.control.slider(function(value) {
+  //     console.log(value);
+  // }, {
+  //   max: 5,
+  //   value: 5,
+  //   step:0.5,
+  //   size: '250px',
+  //   orientation:'vertical',
+  //   increment: true
+  // }).addTo(map);
+      
 }
 
 function createMarkers(response) {
-
   console.log(response);
 
   // Pull the "stations" property off of response.data
@@ -106,14 +122,39 @@ function createMarkers(response) {
   Plotly.newPlot("gauge", gaugeTrace, layout);
 
   var heatArray = [];
-
+  var cats = [];
+  var rats = [];
+  var numRats = [];
+  var checky = 0
   // Loop through the stations array
   for (var index = 0; index < 995; index++) {
+    checky++
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
-    // console.log(bar.rating);
-    // console.log(latLon);
-
+    // console.log(checky)
+    category = bar.categories;
+    rating = bar.rating;
+    numRating = bar.review_count;
+    // console.log(numRating);
+    rats.push(rating);
+    numRats.push(numRating);
+    // console.log(rating);
+    var obj = category.split("'");
+    // console.log(obj);
+    // console.log(obj[7]);
+    cats.push(obj[7])
+    if (obj[15]){
+      // console.log(obj[15]);
+      cats.push(obj[15]);
+      rats.push(rating);
+      numRats.push(numRating);
+    }
+    if (obj[23]){
+      // console.log(obj[23]);
+      cats.push(obj[23]);
+      rats.push(rating);
+      numRats.push(numRating);
+    }
     // function updateGauge(e) {
     //   val = +e.rating;
     //   console.log(val);
@@ -126,10 +167,10 @@ function createMarkers(response) {
       }
       Plotly.restyle("gauge","value", [curr]);
       Plotly.restyle("gauge","delta", [update]);
-      console.log(update);
+      // console.log(update);
       old = curr;
     }
-    
+
     var icons = L.icon({
       iconUrl: 'glass.png',
       iconSize: [30, 30], // size of the icon
@@ -140,9 +181,9 @@ function createMarkers(response) {
       .bindPopup("<h3><a target='_blank' href='" + bar.url +"'>Yelp Listing</a> </h3><h3>" + bar.name + "</h3><h3>Rating: " + bar.rating + "</h3><h3>Phone: " + bar.display_phone + "</h3>")
       .on('click',function updateGauge(bar) {
         string = bar.sourceTarget._popup._content;
-        console.log(string)
+        // console.log(string)
         bonus = string.split(" ");
-        console.log(bonus);
+        // console.log(bonus);
         var len = bonus.length - 2;
         var slcVal = bonus[len];
         check = slcVal.slice(0,1);
@@ -158,29 +199,25 @@ function createMarkers(response) {
         }
         traceUpdate(val);
       })
-        // Plotly.restyle("gauge","value", [valB]);
-    
 
-      // .fire(updateGauge(bar.rating));
-    // Add the marker to the barMarkers array
     barMarkers.push(barMarker);
     
     heatArray.push(latLon);
-    // console.log(latLon)
   }
-
   var topBars = response.filter(d => d.rating>=4.5);
   console.log(topBars)
 
   // // Initialize an array to hold top bar markers
   var topBarMarkers = [];
-
+  var checkyA = 0
   // Loop through the stations array
   for (var index = 0; index < 204; index++) {
     var topBar = topBars[index];
+    checkyA++
     // console.log(topBar)
     topLatLon = [+topBar.latitude, +topBar.longitude];
-    // console.log(topLatLon)
+    console.log(topLatLon)
+    console.log(checkyA)
     
     var topIcons = L.icon({
       iconUrl: 'star.png',
@@ -220,11 +257,114 @@ function createMarkers(response) {
   // Create a layer group made from the bar markers array, pass it into the createMap function
   console.log(heatArray)
   createMap(L.layerGroup(barMarkers), L.layerGroup(topBarMarkers),heatArray)
- 
-}
+  // console.log(cats);
+  // var result = cats.reduce( (acc, o) => (acc[o.name] = (acc[o.name] || 0)+1, acc), {} );
+  // console.log(result);
+  // sorted = result.sort();
+  // console.log(sorted)
+  // console.log(cats.sort())
+  var keyedRatings = cats.map(function(e, i) {
+    return[e, rats[i], numRats[i]];
+  })
+  // console.log(keyedRatings)
+  var sortedRatings = keyedRatings.sort(function(a, b) {
+    a = a[0];
+    b = b[0];
+    return a.localeCompare(b);
+  });
+  console.log(sortedRatings);
+  // var sorted = cats.sort();
+  // console.log(sorted);
+  var prev = sortedRatings[0][0]
+  var count = 1;
+  var named = [];
+  var counted = [];
+  var averaged = [];
+  var averagedNum = [];
+  var ratTot = sortedRatings[0][1];
+  var numRatTot = sortedRatings[0][2];
+  var ratTotCount = 0;
+  for (var index = 0; index < sortedRatings.length; index++){
+    // console.log(sortedRatings[index][0])
+    if (sortedRatings[index][0] == prev){
+      count ++;
+      ratTotCount++;
+      ratTot = ratTot + sortedRatings[index][1];
+      numRatTot = numRatTot + sortedRatings[index][2];
+    }
+    else{
+      // console.log(ratTot);
+      avg = (ratTot / ratTotCount);
+      avgNum = (numRatTot / ratTotCount);
+      ratTot = sortedRatings[index][1];
+      numRatTot = sortedRatings[index][2];
+      named.push(prev);
+      counted.push(count);
+      averaged.push(avg);
+      averagedNum.push(avgNum);
+      prev = sortedRatings[index][0];
+      count = 1;
+      ratTotCount = 1;
+    }
+  }
+  // console.log(named);
+  // console.log(counted);
+  // console.log(averaged);
+  // console.log(averagedNum);
+  
+  var keyed = named.map(function(e, i) {
+    return [e, counted[i], averaged[i], averagedNum[i]];
+  });
+
+  console.log(keyed)
+  var sortedArray = keyed.sort(function(a, b) {
+    return b[1] - a[1];
+  });
+  console.log(sortedArray);
+  titles = sortedArray.map(e => e[0]);
+  count = sortedArray.map(e => e[1]);
+  avgRating = sortedArray.map(e => e[2]);
+  avgNumRating = sortedArray.map(e => e[3]);
+  // console.log(titles)
+  // circleChart(counted);
+  var bubbleTrace = setBubbleTrace(titles, count, avgRating, avgNumRating, layout);
+  window.addEventListener('resize', setBubbleTrace(titles, count, avgRating, avgNumRating,layout));
+  // Plotly.newPlot("bubble", bubbleTrace, layout);
+
+  var topTitles = []
+  var topCounts = []
+
+  for (var index = 0; index < 20; index++) {
+    var topTitle = titles[index];
+    var topCount = +count[index];
+    topTitles.push(topTitle)
+    topCounts.push(topCount)
+  }
+  console.log(topTitles)
+  console.log(topCounts)
+
+  new Chart(document.getElementById("bar-chart-horizontal"), {
+    type: 'horizontalBar',
+    data: {
+      labels: topTitles,
+      datasets: [
+        {
+          label: "Number of Bars in Category",
+          backgroundColor: ["#5c3cba", "#643cba","#683cba","#6e3cba","#733cba","#773cba","#7b3cba","#7f3cba","#833cba","#8a3cba","#8a3cba","#903cba","#963cba","#9b3cba","#a13cba","#a33cba","#ab3cba","#b23cba","#b83cba","#ba3cb6"],
+          data: topCounts
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'SF Bars by Category'
+      }
+    }
+});
+  }
 
 
 // Perform an API call to the Yelp API to get station information. Call createMarkers when complete
 d3.json('bars_data_output.json', createMarkers);
-    
- 
