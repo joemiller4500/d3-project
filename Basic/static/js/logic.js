@@ -93,17 +93,6 @@ function createMap(barStations, topBarId, heatArray) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(map);
-    
-  //   slider = L.control.slider(function(value) {
-  //     console.log(value);
-  // }, {
-  //   max: 5,
-  //   value: 5,
-  //   step:0.5,
-  //   size: '250px',
-  //   orientation:'vertical',
-  //   increment: true
-  // }).addTo(map);
       
 }
 
