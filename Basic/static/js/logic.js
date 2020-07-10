@@ -19,7 +19,17 @@ function setGaugeTrace(){
   return trace;
 }
 
-function setBubbleTrace(titles, count, avgRating, avgNumRating, layout){
+function setBubbleTrace(titles, count, avgRating, avgNumRating){
+  var layout = {
+    paper_bgcolor: 'paleturquoise',
+    xaxis: {
+      title: 'Average Number of Ratings',
+    },
+    yaxis: {
+      title: 'Average Rating'
+    },
+    title:'Bar Categories, Sized based on number of establishments'
+  };
   var size = count.map(c => (Math.sqrt(c) *5))
   console.log(size)
   var trace = [{
@@ -30,7 +40,9 @@ function setBubbleTrace(titles, count, avgRating, avgNumRating, layout){
     marker:{
       color : size,
       size: size
-    }
+    },
+    // text: "x Axis Title"
+    // yaxis_title: "y Axis Title",
   }];
   // return trace;
   Plotly.newPlot("bubble", trace, layout);
@@ -134,10 +146,18 @@ function radarChart(latLon, topLatLon){
         text: 'Distribution of bars from cumulative center of all bars'
       }
     }
-});
+  });
+  var avgLatLon = [latAvg, lonAvg];
+  var centerIcon = L.icon({
+    iconUrl: 'x.png',
+    iconSize: [24, 24], // size of the icon
+}); 
+  var centerMarker = L.marker((avgLatLon), {icon:centerIcon})
+      .bindPopup("Central Point")
+  return centerMarker;
 }
 
-function createMap(barStations, topBarId, heatArray) {
+function createMap(barStations, topBarId, centerMarker, heatArray) {
 
   // Create the tile layer that will be the background of our map
   var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
@@ -179,7 +199,8 @@ function createMap(barStations, topBarId, heatArray) {
   var overlayMaps = {
     "All Bars": barStations,
     "Bar Heatmap" : heat,
-    "Top bars": topBarId
+    "Top bars": topBarId,
+    "Center point": centerMarker
   };
 
 
@@ -187,7 +208,7 @@ function createMap(barStations, topBarId, heatArray) {
   var map = L.map("map-id", {
     center: [37.7749, -122.4194],
     zoom: 12,
-    layers: [lightmap,  darkmap, streets, barStations, topBarId, heat]
+    layers: [lightmap,  darkmap, streets, barStations, topBarId, centerMarker, heat]
   });
 
   // Create a layer control, pass in the baseMaps and overlayMaps. Add the layer control to the map
@@ -362,7 +383,6 @@ function createMarkers(response) {
 
   // Create a layer group made from the bar markers array, pass it into the createMap function
   console.log(heatArray)
-  createMap(L.layerGroup(barMarkers), L.layerGroup(topBarMarkers),heatArray)
   // console.log(cats);
   // var result = cats.reduce( (acc, o) => (acc[o.name] = (acc[o.name] || 0)+1, acc), {} );
   // console.log(result);
@@ -433,10 +453,46 @@ function createMarkers(response) {
   avgNumRating = sortedArray.map(e => e[3]);
   // console.log(titles)
   // circleChart(counted);
-  radarChart(heatArray,topArray);
+  var centerMarker = radarChart(heatArray,topArray);
+  console.log(centerMarker)
+  centerMarker = [centerMarker]
   var bubbleTrace = setBubbleTrace(titles, count, avgRating, avgNumRating, layout);
-  window.addEventListener('resize', setBubbleTrace(titles, count, avgRating, avgNumRating,layout));
+  window.addEventListener('resize', setBubbleTrace(titles, count, avgRating, avgNumRating));
+  createMap(L.layerGroup(barMarkers), L.layerGroup(topBarMarkers), L.layerGroup(centerMarker),heatArray)
   // Plotly.newPlot("bubble", bubbleTrace, layout);
+  
+  var topTitles = []
+  var topCounts = []
+
+  for (var index = 0; index < 20; index++) {
+    var topTitle = titles[index];
+    var topCount = +count[index];
+    topTitles.push(topTitle)
+    topCounts.push(topCount)
+  }
+  console.log(topTitles)
+  console.log(topCounts)
+
+  new Chart(document.getElementById("bar-chart-horizontal"), {
+    type: 'horizontalBar',
+    data: {
+      labels: topTitles,
+      datasets: [
+        {
+          label: "Number of Bars in Category",
+          backgroundColor: ["#5c3cba", "#643cba","#683cba","#6e3cba","#733cba","#773cba","#7b3cba","#7f3cba","#833cba","#8a3cba","#8a3cba","#903cba","#963cba","#9b3cba","#a13cba","#a33cba","#ab3cba","#b23cba","#b83cba","#ba3cb6"],
+          data: topCounts
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: 'Top 20 Categories of SF Bars'
+      }
+    }
+});
 }
 
 
