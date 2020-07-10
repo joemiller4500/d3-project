@@ -28,12 +28,113 @@ function setBubbleTrace(titles, count, avgRating, avgNumRating, layout){
     text: titles,
     mode: 'markers',
     marker:{
-      color : titles,
+      color : size,
       size: size
     }
   }];
   // return trace;
   Plotly.newPlot("bubble", trace, layout);
+}
+
+function radarChart(latLon, topLatLon){
+  console.log(latLon);
+  var latTot = 0, lonTot = 0, count = 0;
+  for (i = 0; i < latLon.length; i++){
+    latTot = latTot + latLon[i][0];
+    lonTot = lonTot + latLon[i][1];
+    count++;
+  }
+  // for (i = 0; i < topLatLon.length; i++){
+  //   latTot = latTot + topLatLon[i][0];
+  //   lonTot = lonTot + topLatLon[i][1];
+  //   count++;
+  // }
+  var latAvg = latTot/count;
+  var lonAvg = lonTot/count;
+  console.log(latAvg);
+  console.log(lonAvg);
+
+  var countNW = 0, countNE = 0, countSE = 0, countSW = 0, topCountNW = 0, topCountNE = 0, topCountSE = 0, topCountSW = 0;
+  for (i = 0; i < latLon.length; i++){
+    // console.log(latLon[i][0]);
+    if (latLon[i][0] < latAvg){
+      if (latLon[i][1] < lonAvg){
+        countSW++;
+      }
+      else{
+        countSE++
+      }
+    }
+    else{
+      if (latLon[i][1] < lonAvg){
+        countNW++;
+      }
+      else{
+        countNE++
+      }
+    }
+  }
+
+  for (i = 0; i < topLatLon.length; i++){
+    if (topLatLon[i][0] < latAvg){
+      if (topLatLon[i][1] < lonAvg){
+        topCountSW++;
+      }
+      else{
+        topCountSE++
+      }
+    }
+    else{
+      if (topLatLon[i][1] < lonAvg){
+        topCountNW++;
+      }
+      else{
+        topCountNE++
+      }
+    }
+  }
+  console.log(countNW)
+  console.log(countNE)
+  console.log(countSW)
+  console.log(countSE)
+
+  console.log(topCountNW)
+  console.log(topCountNE)
+  console.log(topCountSW)
+  console.log(topCountSE)
+
+  new Chart(document.getElementById("radar-chart"), {
+    type: 'radar',
+    data: {
+      labels: ["Northwest of Cumulative Center", "Northeast of Cumulative Center", "Southeast of Cumulative Center", "Southwest of Cumulative Center"],
+      datasets: [
+        {
+          label: "All Bars",
+          fill: true,
+          backgroundColor: "rgba(157, 30, 247,0.2)",
+          borderColor: "rgba(157, 30, 247,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(157, 30, 247,1)",
+          data: [countNW, countNE, countSE, countSW]
+        }, {
+          label: "Top Bars",
+          fill: true,
+          backgroundColor: "rgba(252,186,3,0.2)",
+          borderColor: "rgba(252,186,3,1)",
+          pointBorderColor: "#fff",
+          pointBackgroundColor: "rgba(252,186,3,1)",
+          pointBorderColor: "#fff",
+          data: [topCountNW, topCountNE, topCountSE, topCountSW]
+        }
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'Distribution of bars from cumulative center of all bars'
+      }
+    }
+});
 }
 
 function createMap(barStations, topBarId, heatArray) {
@@ -131,7 +232,7 @@ function createMarkers(response) {
     checky++
     var bar = response[index];
     latLon = [+bar.latitude, +bar.longitude];
-    // console.log(checky)
+    // console.log(latLon)
     category = bar.categories;
     rating = bar.rating;
     numRating = bar.review_count;
@@ -204,20 +305,22 @@ function createMarkers(response) {
     
     heatArray.push(latLon);
   }
+
+  console.log(heatArray)
+
   var topBars = response.filter(d => d.rating>=4.5);
   console.log(topBars)
 
   // // Initialize an array to hold top bar markers
   var topBarMarkers = [];
-  var checkyA = 0
+  var topArray = [];
   // Loop through the stations array
   for (var index = 0; index < 204; index++) {
     var topBar = topBars[index];
-    checkyA++
     // console.log(topBar)
     topLatLon = [+topBar.latitude, +topBar.longitude];
-    console.log(topLatLon)
-    console.log(checkyA)
+    // console.log(topLatLon)
+    // console.log(checkyA)
     
     var topIcons = L.icon({
       iconUrl: 'star.png',
@@ -247,12 +350,15 @@ function createMarkers(response) {
       }
       traceUpdate(val);
     })
+
     
 
   //     // .fire(updateGauge(bar.rating));
   //   // Add the marker to the topBarMarkers array
     topBarMarkers.push(topBarMarker);
+    topArray.push(topLatLon)
   }
+  console.log(topArray)
 
   // Create a layer group made from the bar markers array, pass it into the createMap function
   console.log(heatArray)
@@ -327,6 +433,7 @@ function createMarkers(response) {
   avgNumRating = sortedArray.map(e => e[3]);
   // console.log(titles)
   // circleChart(counted);
+  radarChart(heatArray,topArray);
   var bubbleTrace = setBubbleTrace(titles, count, avgRating, avgNumRating, layout);
   window.addEventListener('resize', setBubbleTrace(titles, count, avgRating, avgNumRating,layout));
   // Plotly.newPlot("bubble", bubbleTrace, layout);
