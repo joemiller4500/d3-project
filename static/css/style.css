@@ -1,0 +1,10 @@
+html,
+body{
+  background-color: paleturquoise;
+}
+#map-id {
+  height: 600px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
